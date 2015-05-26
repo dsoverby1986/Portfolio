@@ -9,9 +9,22 @@
 <p>Write a program to find all three-digit Armstrong numbers. An Armstrong number is an integer such that
 the sum of the cubes of its digits is equal to the number itself. (i.e. 371 is an Armstrong number since 33 +
 73 + 13 = 371.</p>
-<input type="text" required id="input" />
-<button id="getArmstrong">Check your number</button>
-<div id="result"></div>
+<div class="left">
+    <aside>
+        <input type="text" required id="input" />
+        <button id="getArmstrong">Check your number</button>
+        <div id="result"></div>
+    </aside>
+</div>
+<div class="right">
+    <aside>
+        <button id="allArmstrong">View All Armstrong Numbers from 1 to 10,000</button>
+        <div class="area">
+            <p id="displayAll" style="word-wrap: break-word"></p>
+        </div>
+    </aside>
+</div>
+
 
 @section scripts{
     <script>
@@ -38,49 +51,35 @@ the sum of the cubes of its digits is equal to the number itself. (i.e. 371 is a
                 else {
                     output.text("This isn't an Armstrong Number.")
                 }
-                
+            })
+            $('#allArmstrong').click(function () {
+                var sum = 0;
+                var allProducts = [];
+                var output = $('displayAll');
+                var string = "";
+                var stringArray = [];
+                var numArray = [];
+                var armstrong = [];
+                for (var i = 100; i < 1000; i++) {
+                    string = i.toString();
+                    stringArray = string.split("");
+                    for (var j = 0; j < stringArray.length; j++) {
+                        numArray[j] = parseInt(stringArray[j]);
+                    }
+                    for (var k = 0; k < numArray.length; k++) {
+                        allProducts[k] = Math.pow(numArray[k], numArray.length);
+                    }
+                    for (var m = 0; m < allProducts.length; m++) {
+                        sum += allProducts[m];
+                    }
+                    //allProducts = [];
+                    if (sum === i) {
+                        armstrong.push(sum);
+                    }
+                    sum = 0;
+                }
+                output.text(armstrong);
             })
         })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //The following code will work as long as the user inputs a three digit number to check.
-        //Anything with more or less that three digits will not compute accurately.
-        /*for (var i = 0; i < input.length; i++) {
-            inputNum[i] = parseInt(input[i]);
-        }
-        for (var i = 0; i < inputNum.length; i++) {
-            products[i] = (inputNum[i] * inputNum[i] * inputNum[i]);
-        }
-        for (var i = 0; i < products.length; i++) {
-            sum += products[i];
-        }
-        if (sum.toString() === inputString) {
-            output.text("Your number is Armstrong!");
-        }
-        else {
-            output.text("Your number is not Armstrong");
-        }*/
-
     </script>
 }

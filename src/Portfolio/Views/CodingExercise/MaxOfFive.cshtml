@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "MaxOfFive";
+}
+
+<h2>MaxOfFive</h2>
+
+<h4>Directions:</h4>
+<p>Define a funciton maxOfFive() that takes five numbers as arguments and returns the largest of them.</p>
+
+<hr />
+<div id="numInputs">
+    @for (int i = 0; i < 5; i++)
+    {
+        <input type="number" required style="width: 4em" />
+    }
+</div>
+
+<p>
+    <button id="largestButton" style="margin-top: 10px">Get Largest</button>
+</p>
+
+    <p class="output">
+        The largest value is: <span id="result"></span>
+    </p>
+
+
+@section scripts{
+
+<script>
+    
+ 
+
+    $(function maxOfFive() {
+        
+        var outputTag = $('#result');
+
+        outputTag.closest('.output').hide();
+        
+        $('#largestButton').click(function () {         
+
+
+            var inputs = $('#numInputs input:valid');
+            if (inputs.length < 5)
+            {
+                outputTag.closest('.output').hide();
+                alert("Five numbers are needed.");
+                return;
+            }
+
+
+            var largestValue = inputs.sort(function (x, y) { return y.value - x.value; })[0].value;
+
+            outputTag.text(largestValue);
+            outputTag.closest('.output').show();
+
+
+        });
+
+
+    });
+
+</script>
+}

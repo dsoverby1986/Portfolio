@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Armstrong";
+}
+
+<h2>Armstrong</h2>
+
+<h4>Directions:</h4>
+<p>Write a program to find all three-digit Armstrong numbers. An Armstrong number is an integer such that
+the sum of the cubes of its digits is equal to the number itself. (i.e. 371 is an Armstrong number since 33 +
+73 + 13 = 371.</p>
+<input type="text" required id="input" />
+<button id="getArmstrong">Check your number</button>
+<div id="result"></div>
+
+@section scripts{
+    <script>
+        $(function () {
+            $('#getArmstrong').click(function () {
+                var input = $('#input').val().split("");
+                var inputString = $('#input').val();
+                var inputNum = [];
+                var sum = 0;
+                var allProducts = [];
+                var output = $('#result');
+                for (var i = 0; i < input.length; i++) {
+                    inputNum[i] = parseInt(input[i]);
+                }
+                for (var i = 0; i < inputNum.length; i++) {
+                    allProducts[i] = Math.pow(inputNum[i], inputNum.length);
+                }
+                for (var i = 0; i < allProducts.length; i++) {
+                    sum += allProducts[i];
+                }
+                if (sum.toString() === inputString) {
+                    output.text("This is an Armstrong Number.");
+                }
+                else {
+                    output.text("This isn't an Armstrong Number.")
+                }
+                
+            })
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //The following code will work as long as the user inputs a three digit number to check.
+        //Anything with more or less that three digits will not compute accurately.
+        /*for (var i = 0; i < input.length; i++) {
+            inputNum[i] = parseInt(input[i]);
+        }
+        for (var i = 0; i < inputNum.length; i++) {
+            products[i] = (inputNum[i] * inputNum[i] * inputNum[i]);
+        }
+        for (var i = 0; i < products.length; i++) {
+            sum += products[i];
+        }
+        if (sum.toString() === inputString) {
+            output.text("Your number is Armstrong!");
+        }
+        else {
+            output.text("Your number is not Armstrong");
+        }*/
+
+    </script>
+}

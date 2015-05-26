@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "PerfectNumbers";
+}
+
+<h2>PerfectNumbers</h2>
+
+<h4>Directions:</h4>
+<p>Perfect Numbers: In number theory, a perfect number is a positive integer that is equal to the sum of its
+proper positive divisors, that is, the sum of its positive divisors excluding the number itself. The first perfect number is 6 – its positive divisors (excluding itself) are 1, 2, and 3, whose sum is 6.<br /><br />a. Write a function that determines whether a given number is ‘perfect.’
+<br /><br />b. Write a function to display all perfect numbers between 1 and 10,000.</p>
+
+<div class="left">
+    <aside>
+        <input id="pnInput" type="text" required style="width: 50px;"/><button id="check">Check Perfection!</button>
+        <p id="pnOutputTag">Is your number a perfect number? <span id="pnResult"></span></p>
+    </aside>
+</div>
+
+<div class="right">
+    <aside>
+        <button id="allPerfect">View All Perfect Numbers from 1 to 10,000</button>
+        <div class="area">
+            <p id="displayAll" style="word-wrap: break-word"></p>
+        </div>
+    </aside>
+</div>
+
+@section scripts{
+    <script>
+    $(function () {
+        $('#check').click(function () {
+            var input = parseInt($('#pnInput').val(), 10);
+            var collection = [];
+            var sum = 0;
+            var output = $('#pnResult');
+
+            for (var i = 1; i < input; i++) {
+                if (input % i === 0) {
+                    collection.push(i);
+                }
+            }
+
+            for (var i = 0; i < collection.length; i++) {
+                sum += collection[i];
+            }
+
+            parseInt(input, 10);
+
+            if (sum === input) {
+                output.text("Yes!");
+            }
+            else {
+                output.text("No way!");
+            }
+        });
+
+        $('#allPerfect').click(function () {
+        //    var element = $('<span></span>');
+        //    var line = document.createElement('br');
+            var display = $('#displayAll');
+            var divisors = [];
+            var collection = [];
+            var sum = 0;
+            for (var i = 1; i <= 10000; i++) {
+                for (var j = 1; j < i; j++) {
+                    if (i % j === 0) {
+                        divisors.push(j);
+                    }
+                }
+                for (var k = 0; k < divisors.length; k++) {
+                    sum += divisors[k];
+                }
+                if (sum === i) {
+                    collection.push(i);
+                }
+                sum = 0;
+                divisors = [];
+            }
+            display.text(collection);
+        });
+    });
+</script>
+}

@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "HappyNumbers";
+}
+
+<h2>HappyNumbers</h2>
+
+<h4>Directions:</h4>
+<p>Write a program to display the first 5 Happy Numbers. Happy numbers are those that can be reduced to
+1 through the following process – Start with any positive integer, replace the number with the sum of the
+squares of its digits, and repeat until the result is 1 or the result is an endless loop.</p>
+<input id="input" type="text" />
+<button id="getHappy">Get Happy!</button>
+<div id="result"></div>
+
+@section scripts{
+<script>
+    $(function () {
+        $('#getHappy').click(function () {
+            var input = $('#input').val().split("");
+            var inputNum = [];
+            var allSums = [];
+            var sum = 0;
+            var output = $('#result');
+            var duplicate = false;
+            do {
+                for (var i = 0; i < input.length; i++) {
+                    inputNum[i] = parseInt(input[i]);
+                }
+                for (var i = 0; i < inputNum.length; i++) {
+                    sum += (inputNum[i] * inputNum[i]);
+                }
+                allSums.push(sum);
+                allSums.sort(function (a, b) { return a - b });
+                if (allSums.length > 1) {
+                    for (var i = 0; i < allSums.length; i++) {
+                        if (allSums[i] === allSums[i + 1]) {
+                            duplicate = true;
+                        }
+                    }
+                }
+                input = sum.toString().split("");
+                inputNum = [];
+                sum = 0;
+            } while (allSums[0] !== 1 && duplicate === false)
+            if (duplicate) {
+                output.text("Your number is unhappy, bro.")
+            }
+            else if (allSums[0] === 1) {
+                output.text("Your number is HAPPY!")
+            }
+        });
+    });
+</script>
+}

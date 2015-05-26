@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CodingExerciseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -236,6 +237,19 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\CodingExercise\Index.cshtml" />
+    <Content Include="Views\CodingExercise\MaxOfFive.cshtml" />
+    <Content Include="Views\CodingExercise\SumMultiply.cshtml" />
+    <Content Include="Views\CodingExercise\Factorial.cshtml" />
+    <Content Include="Views\CodingExercise\Palindrome.cshtml" />
+    <Content Include="Views\CodingExercise\FizzBuzz.cshtml" />
+    <Content Include="Views\CodingExercise\PerfectNumbers.cshtml" />
+    <Content Include="Views\CodingExercise\HappyNumbers.cshtml" />
+    <Content Include="Views\CodingExercise\Armstrong.cshtml" />
+    <Content Include="Views\CodingExercise\LongestWord.cshtml" />
+    <Content Include="Views\CodingExercise\LongWords.cshtml" />
+    <Content Include="Views\CodingExercise\WordFrequency.cshtml" />
+    <Content Include="Views\CodingExercise\WordFind.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

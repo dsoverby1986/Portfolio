@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "Palindrome";
+}
+
+<h2>Palindrome</h2>
+
+<h4>Directions:</h4>
+<p>Define a function palindrome() that computes the reversal of a string, returning true if the string is a
+palindrome (the same forwards and backwards – “radar” for example), and false if otherwise.</p>
+<input type="text" id="input"/>
+<button id="checkPalindrome">Check the word</button>
+<div id="result"></div>
+
+@section scripts{
+    <script>
+        $(function () {
+            $('#checkPalindrome').click(function () {
+                var input = $('#input').val().split("").filter(function (x) { return x !== ' '; });
+                var backwards = [];
+                var output = $('#result');
+                var match = true;
+                for (var i = 0; i < input.length; i++) {
+                    backwards[i] = input[i];
+                }
+                backwards = backwards.reverse();
+                for (var i = 0; i < input.length; i++) {
+                    input[i] = input[i].toLowerCase();
+                    backwards[i] = backwards[i].toLowerCase();
+                }
+                if (input.length % 2 === 0) {
+                    for (var i = 0; i < (input.length / 2); i++) {
+                        if (input[i] !== backwards[i]) {
+                            match = false;
+                            if (match === false) {
+                                break;
+                            }
+                        }
+                    }
+                }
+                else {
+                    for (var i = 0; i < Math.floor(input.length / 2); i++) {
+                        if (input[i] !== backwards[i]) {
+                            match = false;
+                            if (match === false) {
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (match) {
+                    output.text("Your word is a palindrome.");
+                }
+                else {
+                    output.text("Your word is not a palindrome.");
+                }
+            })
+        })
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       @*         /*while (match === true) {
+        for (var i = 0; i < input.length; i++) {
+            if (input[i] !== backwards[i]) {
+                match = false;
+            }
+            else if (match === false) {
+                break;
+            }
+        }
+    }*/                                                               *@

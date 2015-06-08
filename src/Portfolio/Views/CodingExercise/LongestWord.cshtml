@@ -7,3 +7,28 @@
 
 <h4>Directions:</h4>
 <p>Write a function findLongestWord() that finds and displays the longest word in a selected text file.</p>
+<input type="file" id="input" />
+<hr />
+<pre id="display"></pre>
+
+@section scripts {
+    <script>
+        $(function () {
+            $('#input').click(function () {
+                var input = $('#input');
+                var output = $('#display');
+                var reader = new FileReader();
+                var file = "";
+                var array = [];
+                reader.onload = function (evt) {
+                    output.text(evt.target.result);
+                    array[0] = output.text(evt.target.result);//at this point i really can't see where to pick up the content of the text file.
+                };                                            //I've tried some other things but this is where I am at now. I don't really
+                input.change(function (evt) {                 //Understand how the content is being routed and rendered here.
+                    file = evt.target.files[0];
+                    reader.readAsText(file);
+                });
+            });
+        });
+    </script>
+}

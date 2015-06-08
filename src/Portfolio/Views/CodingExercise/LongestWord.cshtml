@@ -14,20 +14,36 @@
 @section scripts {
     <script>
         $(function () {
-            $('#input').click(function () {
-                var input = $('#input');
-                var output = $('#display');
-                var reader = new FileReader();
-                var file = "";
-                var array = [];
-                reader.onload = function (evt) {
-                    output.text(evt.target.result);
-                    array[0] = output.text(evt.target.result);//at this point i really can't see where to pick up the content of the text file.
-                };                                            //I've tried some other things but this is where I am at now. I don't really
-                input.change(function (evt) {                 //Understand how the content is being routed and rendered here.
-                    file = evt.target.files[0];
-                    reader.readAsText(file);
-                });
+            var input = $('#input');
+            var output = $('#display');
+            var reader = new FileReader();
+            var file = "";
+            var array;
+            var text = "";
+            var counter = 0;
+            var collection = [];
+            reader.onload = function (evt) {
+                output.text(evt.target.result);
+                text = evt.target.result;
+                array = text.split(" ");
+                for (var i = 0; i < array.length; i++) {
+                    if (collection.length === 0) {
+                        collection.push(array[0]);//the first string in the Alice In Wonderland text file I am using is this: {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+                    }                             //the next string is this: {\*\generator Riched20 6.3.9600}\viewkind4\uc1 - with my code collecting the longest strings, this first string will always be the longest.
+                    else {                        //and i've got the paragraph open and close tags(i guess they're some sort of tag) throughout the content.
+                        if (array[i].length > collection[0].length) {//how do i get rid of all of this stuff?
+                            collection.splice(0, 1, array[i]);
+                        }
+                        else if (array[i].length === collection[0].length) {
+                            collection.push(array[i]);
+
+                        }
+                    }
+                }
+            };
+            input.change(function (evt) {
+                file = evt.target.files[0];
+                reader.readAsText(file);
             });
         });
     </script>

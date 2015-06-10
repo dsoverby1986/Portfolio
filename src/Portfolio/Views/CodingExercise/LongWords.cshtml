@@ -8,3 +8,42 @@
 <h4>Directions:</h4>
 <p>Write a function filterLongWords() that finds and displays all words that are longer than a given integer i
 in a selected text file. Do not display words more than once.</p>
+<input type="number" id="stringLength" />Enter the number that you want your words to be longer than.
+<input type="file" id="input" />
+<pre id="content"></pre>
+<div id="result"></div>
+@section scripts {
+    <script>
+        $(function () {
+            var input = $('#input');
+            var output = $('#content');
+            var reader = new FileReader();
+            reader.onload = function (evt) {
+                output.text(evt.target.result);
+            };
+            input.change(function (evt) {
+                var file = evt.target.files[0];
+                reader.readAsText(file);
+            });
+        });
+    </script>
+}
+
+ @*/*var input = $('#input');
+    var reader = new FileReader();
+    var stringLength = $('#stringLength').val();
+    var longer = [];
+    var output = $('#result');
+    reader.onload = function (evt) {
+        var content = evt.target.result.split(" ");
+        for (var i = 0; i < content.length; i++) {
+            if (content[i] > stringLength) {
+                longer.push(content[i]);
+            }
+        }
+        output.text(longer);
+    };
+    input.change(function (evt) {
+        var file = evt.taget.files[0];
+        reader.readAsText(file);
+    });*/*@

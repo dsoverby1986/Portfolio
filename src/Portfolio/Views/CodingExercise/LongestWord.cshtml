@@ -9,6 +9,7 @@
 <p>Write a function findLongestWord() that finds and displays the longest word in a selected text file.</p>
 <input type="file" id="input" />
 <hr />
+<div id="result"></div>
 <pre id="display"></pre>
 
 @section scripts {
@@ -17,21 +18,53 @@
             var input = $('#input');
             var output = $('#display');
             var reader = new FileReader();
-            var file = "";
+            var strng = "";
             var array;
             var text = "";
+            var noPunc = "";
             var counter = 0;
             var collection = [];
+            var result = $('#result');
             reader.onload = function (evt) {
                 output.text(evt.target.result);
                 text = evt.target.result;
-                array = text.split(" ");
+                array = text.split(/\s+/);
+                //array = text.split(" ");
+                for (var i = 0; i < array.length; i++) {
+                    array[i] = array[i].replace(/[.,?!,)(\s,]/g, "");
+                }
+                /*for (var i = 0; i < array.length; i++) {
+                    if (array[i].indexOf(" ") !== -1) {
+                        var n = array[i].indexOf(" ");
+                        if (n > 0 && n < array[i].length - 1) {
+                            var capture = array[i].slice(n, array[i].length);
+                            array.splice(array[i + 1], 0, capture);
+                        }
+                        else {
+                            array[i] = array[i].replace(" ", "");
+                        }
+                    }
+                }*/
+                for (var i = 0; i < array.length; i++) {
+                    var elementLength = array[i].length;
+                    var elementFirst = array[i].charAt(0);
+                    var elementLast = array[i].charAt(array[i].length - 1);
+                    if (elementFirst === "'") {
+                        array[i].replace(array[i].charAt(0), "");
+                    }
+                    else if (elementLast === "'") {
+                        array[i].replace(array[i].charAt(array[i].length - 1), "");
+                    }
+                    /*else if (array[i].length[array[i].length - 2] === "'") {
+                        array[i].length[array[i].length - 2].replace(array[i].length[array[i].length - 2], "");
+                    }*/
+                }
                 for (var i = 0; i < array.length; i++) {
                     if (collection.length === 0) {
-                        collection.push(array[0]);//the first string in the Alice In Wonderland text file I am using is this: {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
-                    }                             //the next string is this: {\*\generator Riched20 6.3.9600}\viewkind4\uc1 - with my code collecting the longest strings, this first string will always be the longest.
-                    else {                        //and i've got the paragraph open and close tags(i guess they're some sort of tag) throughout the content.
-                        if (array[i].length > collection[0].length) {//how do i get rid of all of this stuff?
+                        collection.push(array[0]);
+                    }
+                    else {
+                        if (array[i].length > collection[0].length) {
                             collection.splice(0, 1, array[i]);
                         }
                         else if (array[i].length === collection[0].length) {
@@ -40,11 +73,12 @@
                         }
                     }
                 }
+                result.text(collection);
             };
             input.change(function (evt) {
-                file = evt.target.files[0];
+                var file = evt.target.files[0];
                 reader.readAsText(file);
             });
         });
-    </script>
+    </script> 
 }

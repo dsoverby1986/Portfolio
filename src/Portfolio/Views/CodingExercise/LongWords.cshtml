@@ -18,15 +18,15 @@ in a selected text file. Do not display words more than once.</p>
             var input = $('#input');
             var output = $('#content');
             var result = $('#result');
-            var howLong = document.getElementById('stringLength');
             var stringLength = $('#outLong');
             var text = "";
             var array = [];
             var longer = [];
             var reader = new FileReader();
             reader.onload = function (evt) {
+                var howLong = parseInt($('#stringLength').val());
                 result.text("");
-                output.text("");
+                output.text("");;
                 stringLength = howLong;
                 text = evt.target.result;
                 output.text(evt.target.result);
@@ -57,7 +57,7 @@ in a selected text file. Do not display words more than once.</p>
                     }
                 }
                 for (var i = 0; i < array.length; i++) {
-                    if (array[i].length > parseInt(howLong)) {
+                    if (array[i].length > howLong) {
                         longer.push(array[i]);
                     }
                 }

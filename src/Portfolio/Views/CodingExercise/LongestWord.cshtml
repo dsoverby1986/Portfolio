@@ -19,6 +19,7 @@
             var input = $('#input');
             var output = $('#display');
             var result = $('#result');
+            var text = "";
             var array;
             var collection = [];
             var reader = new FileReader();
@@ -26,22 +27,22 @@
             output.text("");
             result.text("");//This doesn't clear the <span> element everytime. Need to work on it some more.
             output.text(evt.target.result);
-            input = evt.target.result;//
+            text = evt.target.result;//
             //As ashamed as I am to admit it, this is the easiest way that I KNOW of to get rid of these characters. Yes, I'm a loser.
-            input = input.replace(/\//g, " ");
-            input = input.replace(/\\/g, " ");
-            input = input.replace(/--/g, " ");
-            input = input.replace(/ -/g, " ");
-            input = input.replace(/- /g, " ");
-            input = input.replace("{", " ");
-            input = input.replace("}", " ");
-            input = input.replace("=", " ");
-            input = input.replace("^", " ");
-            input = input.replace("[", " ");
-            input = input.replace("]", " ");
-            input = input.replace("^", " ");
-            input = input.replace(/[.,?#*&%$;<>"+:!,)_/(\s,]/g, " ");
-            array = input.split(/\s+/);
+            text = text.replace(/\//g, " ");
+            text = text.replace(/\\/g, " ");
+            text = text.replace(/--/g, " ");
+            text = text.replace(/ -/g, " ");
+            text = text.replace(/- /g, " ");
+            text = text.replace("{", " ");
+            text = text.replace("}", " ");
+            text = text.replace("=", " ");
+            text = text.replace("^", " ");
+            text = text.replace("[", " ");
+            text = text.replace("]", " ");
+            text = text.replace("^", " ");
+            text = text.replace(/[.,?#*&%$;<>"+:!,)_/(\s,]/g, " ");
+            array = text.split(/\s+/);
             //This loop is to replace apostrophes that occur at the beginning or the end of a string
             for (var i = 0; i < array.length; i++) {
                 var elementLength = array[i].length;

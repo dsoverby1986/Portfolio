@@ -8,18 +8,72 @@
 <h4>Directions:</h4>
 <p>Write a function filterLongWords() that finds and displays all words that are longer than a given integer i
 in a selected text file. Do not display words more than once.</p>
-<input type="number" id="stringLength" />Enter the number that you want your words to be longer than.
+<input type="text" required id="stringLength" />Enter the number that you want your words to be longer than.
 <input type="file" id="input" />
+<div id="descript">These are the words that have more than <span id="outLong"></span> characters: <span id="result"></span></div>
 <pre id="content"></pre>
-<div id="result"></div>
 @section scripts {
     <script>
         $(function () {
             var input = $('#input');
             var output = $('#content');
+            var result = $('#result');
+            var howLong = document.getElementById('stringLength');
+            var stringLength = $('#outLong');
+            var text = "";
+            var array = [];
+            var longer = [];
             var reader = new FileReader();
             reader.onload = function (evt) {
+                result.text("");
+                output.text("");
+                stringLength = howLong;
+                text = evt.target.result;
                 output.text(evt.target.result);
+                text = text.replace(/\//g, " ");
+                text = text.replace(/\\/g, " ");
+                text = text.replace(/--/g, " ");
+                text = text.replace(/ -/g, " ");
+                text = text.replace(/- /g, " ");
+                text = text.replace("{", " ");
+                text = text.replace("}", " ");
+                text = text.replace("=", " ");
+                text = text.replace("^", " ");
+                text = text.replace("[", " ");
+                text = text.replace("]", " ");
+                text = text.replace("^", " ");
+                text = text.replace(/[.,?#*&%$;<>"+:!,)_/(\s,]/g, " ");
+                array = text.split(/\s+/);
+                for (var i = 0; i < array.length; i++) {
+                    var elementLength = array[i].length;
+                    var elementFirst = array[i].charAt(0);
+                    var elementLast = array[i].charAt(array[i].length - 1);
+                    array[i] = array[i].toLowerCase();
+                    if (elementFirst === "'") {
+                        array[i] = array[i].replace(array[i].charAt(0), "");
+                    }
+                    else if (elementLast === "'") {
+                        array[i] = array[i].replace(array[i].charAt(array[i].length - 1), "");
+                    }
+                }
+                for (var i = 0; i < array.length; i++) {
+                    if (array[i].length > parseInt(howLong)) {
+                        longer.push(array[i]);
+                    }
+                }
+                if (longer.length > 1) {
+                    for (var i = 0; i < longer.length; i++) {
+                        var match = false;
+                        if (longer[i] === longer[i + 1]) {
+                            longer.splice(i, 1);
+                            var match = true;
+                        }
+                        if (match) {
+                            i -= 1;
+                        }
+                    }
+                }
+                result.text(longer);
             };
             input.change(function (evt) {
                 var file = evt.target.files[0];
@@ -28,22 +82,3 @@ in a selected text file. Do not display words more than once.</p>
         });
     </script>
 }
-
- @*/*var input = $('#input');
-    var reader = new FileReader();
-    var stringLength = $('#stringLength').val();
-    var longer = [];
-    var output = $('#result');
-    reader.onload = function (evt) {
-        var content = evt.target.result.split(" ");
-        for (var i = 0; i < content.length; i++) {
-            if (content[i] > stringLength) {
-                longer.push(content[i]);
-            }
-        }
-        output.text(longer);
-    };
-    input.change(function (evt) {
-        var file = evt.taget.files[0];
-        reader.readAsText(file);
-    });*/*@

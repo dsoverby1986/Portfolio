@@ -46,25 +46,12 @@ text file (i.e. the number of occurrences of “Alice” in the first chapter of
                 for (var i = 0; i < array.length; i++) {
                     array[i] = array[i].toLowerCase();
                 }
+                //This loop and subsequent conditional statement find the given word in the array and count how many occurrences there are.
                 for (var i = 0; i < array.length; i++) {
                     if(array[i] === word) {
                         counter += 1;
                     }
                 }
-                //This conditional statement and subsequent loop will remove any elements of the collection array that
-                //contains the same string as another element in the array
-               /* if (collection.length > 1) {
-                    for (var i = 0; i < collection.length; i++) {
-                        var match = false;
-                        if (collection[i] === collection[i + 1]) {
-                            collection.splice(i, 1);
-                            var match = true;
-                        }
-                        if (match) {
-                            i -= 1;
-                        }
-                    }
-                }*/
                 result.text(counter);
             };
             input.change(function (evt) {

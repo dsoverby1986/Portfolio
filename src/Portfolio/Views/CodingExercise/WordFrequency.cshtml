@@ -7,11 +7,77 @@
 
 <h4>Directions:</h4>
 <p>Write a function wordFreq() that displays a frequency listing of the words contained in a selected text
-file. Order the words by frequency.</p>
-<input type="file" id="input" />
+file. Order the words by frequency.</p>@*Bro---Do you understand what these directions mean?*@
+<input type="file" id="input" />@*The FREQUENCY LISTING OF THE WORDS-----what does that even mean?*@
 <div id="result"></div>
+<div id="display"></div>
 @section scripts {
     <script>
-
+        $(function () {
+            var input = $('#input');//From the selected text file, cycle through the words and separate them into arrays.
+            var output = $('#display');//Once separated into arrays, get the length of the array.
+            var result = $('#result');//After getting the length of each array, order the arrays from highest length to lowest length.
+            var text = "";//Then display each word in order of array length, along with the array count for each word.
+            var array;
+            var dict;
+            var reader = new FileReader();
+            reader.onload = function (evt) {
+                output.text("");
+                result.text("");//This doesn't clear the <span> element everytime. Need to work on it some more.
+                output.text(evt.target.result);
+                text = evt.target.result;//
+                //As ashamed as I am to admit it, this is the easiest way that I KNOW of to get rid of these characters. Yes, I'm a loser.
+                text = text.replace(/\//g, " ");
+                text = text.replace(/\\/g, " ");
+                text = text.replace(/--/g, " ");
+                text = text.replace(/ -/g, " ");
+                text = text.replace(/- /g, " ");
+                text = text.replace("{", " ");
+                text = text.replace("}", " ");
+                text = text.replace("=", " ");
+                text = text.replace("^", " ");
+                text = text.replace("[", " ");
+                text = text.replace("]", " ");
+                text = text.replace("^", " ");
+                text = text.replace(/[.,?#*&%$;<>"+:!,)_/(\s,]/g, " ");
+                array = text.split(/\s+/);
+                //This loop is to replace apostrophes that occur at the beginning or the end of a string
+                for (var i = 0; i < array.length; i++) {
+                    var elementLength = array[i].length;
+                    var elementFirst = array[i].charAt(0);
+                    var elementLast = array[i].charAt(array[i].length - 1);
+                    if (elementFirst === "'") {
+                        array[i] = array[i].replace(array[i].charAt(0), "");
+                    }
+                    else if (elementLast === "'") {
+                        array[i] = array[i].replace(array[i].charAt(array[i].length - 1), "");
+                    }
+                }
+                //This loop will place the appropriate strings into the collection array
+                for (var i = 0; i < array.length; i++) {
+                    if (collection.length === 0) {
+                        collection.push(array[0]);
+                    }
+                    else {
+                        for (var j = 0; j < collection.length; j++) {
+                            if (array[i].length > collection[j].length) {
+                                collection.splice(0, collection.length, array[i]);
+                            }
+                            else if (array[i].length === collection[0].length) {
+                                collection.push(array[i]);
+                                j = collection.length;
+                            }
+                        }
+                    }
+                }
+                //This loop changes all of the strings in the collection array to have all lowercase characters
+                for (var i = 0; i < collection.length; i++) {
+                    collection[i] = collection[i].toLowerCase();
+            };
+            input.change(function (evt) {
+                var file = evt.target.files[0];
+                reader.readAsText(file);
+            });
+        });
     </script>
 }

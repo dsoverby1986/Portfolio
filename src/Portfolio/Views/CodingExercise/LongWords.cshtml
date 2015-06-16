@@ -18,16 +18,15 @@ in a selected text file. Do not display words more than once.</p>
             var input = $('#input');
             var output = $('#content');
             var result = $('#result');
-            var stringLength = $('#outLong');
             var text = "";
             var array = [];
             var longer = [];
             var reader = new FileReader();
             reader.onload = function (evt) {
                 var howLong = parseInt($('#stringLength').val());
+                document.getElementById('outLong').innerHTML = howLong.toString();
                 result.text("");
-                output.text("");;
-                stringLength = howLong;
+                output.text("");
                 text = evt.target.result;
                 output.text(evt.target.result);
                 text = text.replace(/\//g, " ");

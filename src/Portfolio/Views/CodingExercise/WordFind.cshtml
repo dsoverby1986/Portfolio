@@ -8,18 +8,64 @@
 <hh4>Directions:</hh4>
 <p>Write a function findWord() that returns the total number of occurrences of a given word in a selected
 text file (i.e. the number of occurrences of “Alice” in the first chapter of Alice in Wonderland).</p>
-<input type="file" id="input" />
 <input type="text" id="word" />
-<div id="result"></div>
+<input type="file" id="input" />
+<div id="output">Your word was found <span id="result"></span> time(s) in this text file.</div>
+<pre id="display"></pre>
 @section scripts {
     <script>
         $(function () {
             var input = $('#input');
-            var word = $('#word');
-            var output = $('#result');
+            var output = $('#display');
+            var result = $('#result');
+            var text = "";
+            var counter = 0;
             var reader = new FileReader();
             reader.onload = function (evt) {
-                
+                var word = $('#word').val();
+                output.text("");
+                result.text("");
+                output.text(evt.target.result);
+                text = evt.target.result;
+                //As ashamed as I am to admit it, this is the easiest way that I KNOW of to get rid of these characters. Yes, I'm a loser.
+                text = text.replace(/\//g, " ");
+                text = text.replace(/\\/g, " ");
+                text = text.replace(/--/g, " ");
+                text = text.replace(/ -/g, " ");
+                text = text.replace(/- /g, " ");
+                text = text.replace("{", " ");
+                text = text.replace("}", " ");
+                text = text.replace("=", " ");
+                text = text.replace("^", " ");
+                text = text.replace("[", " ");
+                text = text.replace("]", " ");
+                text = text.replace("^", " ");
+                text = text.replace(/[.,?#*&%$;<>"+:!,)_/(\s,]/g, " ");
+                array = text.split(/\s+/);
+                //This loop changes all of the strings in the collection array to have all lowercase characters
+                for (var i = 0; i < array.length; i++) {
+                    array[i] = array[i].toLowerCase();
+                }
+                for (var i = 0; i < array.length; i++) {
+                    if(array[i] === word) {
+                        counter += 1;
+                    }
+                }
+                //This conditional statement and subsequent loop will remove any elements of the collection array that
+                //contains the same string as another element in the array
+               /* if (collection.length > 1) {
+                    for (var i = 0; i < collection.length; i++) {
+                        var match = false;
+                        if (collection[i] === collection[i + 1]) {
+                            collection.splice(i, 1);
+                            var match = true;
+                        }
+                        if (match) {
+                            i -= 1;
+                        }
+                    }
+                }*/
+                result.text(counter);
             };
             input.change(function (evt) {
                 var file = evt.target.files[0];

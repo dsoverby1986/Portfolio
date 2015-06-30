@@ -50,6 +50,7 @@ file. Order the words by frequency.</p>
                     else if (elementLast === "'") {
                         array[i] = array[i].replace(elementLast, "");
                     }
+                    array[i] = array[i].toLowerCase();
                 }
                 for (var i = 0; i < array.length; i++) {
                     if(array[i] in dict) {
@@ -59,7 +60,13 @@ file. Order the words by frequency.</p>
                         dict[array[i]] = 1;
                     }
                 }
-                result.text(listKeysValues);
+                /*array = [];
+                for (var word in dict) {
+                    array.push([word, dict[word]]);
+                }
+                array.sort(function (a, b) { a[1] - b[1] });
+                result.text(array);*/
+                result.text(JSON.stringify(dict, null, 4));
             };
             input.change(function (evt) {
                 var file = evt.target.files[0];

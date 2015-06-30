@@ -49,10 +49,10 @@
                 var elementFirst = array[i].charAt(0);
                 var elementLast = array[i].charAt(array[i].length - 1);
                 if (elementFirst === "'") {
-                    array[i] = array[i].replace(array[i].charAt(0), "");
+                    array[i] = array[i].replace(elementFirst, "");
                 }
                 else if (elementLast === "'") {
-                    array[i] = array[i].replace(array[i].charAt(array[i].length - 1), "");
+                    array[i] = array[i].replace(elementLast, "");
                 }
             }
             //This loop will place the appropriate strings into the collection array

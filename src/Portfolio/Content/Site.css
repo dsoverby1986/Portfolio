@@ -67,8 +67,12 @@ div.area * {
     display: inline;
 }
 
-table {
+#myTable, td, th {
     border: 2px solid black;
     border-collapse: collapse;
     text-align: center
+}
+
+th {
+    color: blue;
 }

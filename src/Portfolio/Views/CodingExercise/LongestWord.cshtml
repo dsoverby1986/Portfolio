@@ -18,12 +18,12 @@
         $(function () {
             var input = $('#input');
             var output = $('#display');
+            var reader = new FileReader();
+            reader.onload = function (evt) {
             var result = $('#result');
             var text = "";
             var array;
             var collection = [];
-            var reader = new FileReader();
-        reader.onload = function (evt) {
             output.text("");
             result.text("");//This doesn't clear the <span> element everytime. Need to work on it some more.
             output.text(evt.target.result);

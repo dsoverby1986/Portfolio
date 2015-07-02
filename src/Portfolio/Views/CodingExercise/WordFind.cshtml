@@ -19,10 +19,10 @@ text file (i.e. the number of occurrences of “Alice” in the first chapter of
             var output = $('#display');
             var result = $('#result');
             var text = "";
-            var counter = 0;
             var reader = new FileReader();
             reader.onload = function (evt) {
                 var word = $('#word').val();
+                var counter = 0;
                 output.text("");
                 result.text("");
                 output.text(evt.target.result);

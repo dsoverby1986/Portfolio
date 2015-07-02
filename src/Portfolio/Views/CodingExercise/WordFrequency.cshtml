@@ -11,7 +11,7 @@ file. Order the words by frequency.</p>
 <input type="file" id="input" />
 <div id="result"></div>
 <div id="display"></div>
-<table class="table-bordered table-striped" id="table">
+<table class="table-bordered table-striped" id="myTable">
     <thead>
         <tr>
             <th>Word</th>
@@ -21,46 +21,30 @@ file. Order the words by frequency.</p>
     <tbody id="body">
     </tbody>
 </table>
-@*<table class="table-bordered table-striped" id="table2">
-        <thead>
-            <tr>
-                <th>Word</th>
-                <th>Frequency</th>
-            </tr>
-        </thead>
-        <tbody id="body">
-            <tr>
-                <td>When</td>  This looks kind of like what I am wanting to happen when I am dynamically creating the table
-                <td>1</td>     in the javascript but for some reason I am ending up with an extra column at the beginning 
-            </tr>              of my table, under the table header. When inspecting the elements in the dev tools while stepping
-            <tr>               through the loop that creates the table, I can see that the extra column seems to be being created
-                <td>a</td>     when I create a <tr> tag. I am creating a <tr> tag each time through the loop so that I will have
-                <td>2</td>     something to append my <td> tags to (they contain the words and their frequencies when rendered).
-            </tr>              I guess the issue is with creating that <tr> tag everytime through the loop but I don't see how to
-        </tbody>               get around that right now. More diddling on it tomorrow(07/02/2015). Poop.
-    </table>*@
 @section scripts {
     <script>
         $(function () {
             var input = $('#input');
             var output = $('#display');
             var result = $('#result');
-            var table = $('#table');
-            var word = $('#word');
-            var freq = $('#freq');
+            var table = $('#myTable');
             var body = $('#body');
-            var row = $('.row');
-            var text = "";
-            var array;
-            dict = {};
-            var listKeysValues = "";
-            table.hide();
+
             var reader = new FileReader();
+
+            table.hide();
+
             reader.onload = function (evt) {
+                $('#myTable tbody tr').remove()
+                var text = "";
+                var array;
+                var dict = {};
                 output.text("");
                 result.text("");
                 output.text(evt.target.result);
+
                 text = evt.target.result;
+
                 text = text.replace(/\//g, " ");
                 text = text.replace(/\\/g, " ");
                 text = text.replace(/--/g, " ");
@@ -74,6 +58,7 @@ file. Order the words by frequency.</p>
                 text = text.replace("]", " ");
                 text = text.replace("^", " ");
                 text = text.replace(/[.,?#*&%$;<>"+:!,)_/(\s,]/g, " ");
+
                 array = text.split(/\s+/);
 
                 for (var i = 0; i < array.length; i++) {
@@ -103,7 +88,7 @@ file. Order the words by frequency.</p>
                 array = sortProperties(dict);
 
                 for (var i = 0; i < array.length; i++) {
-                    var tr = $('<tr class="row"></tr>');
+                    var tr = $('<tr></tr>');
                     var td1 = $('<td></td>');
                     var td2 = $('<td></td>');
                     body.append(tr.append(td1.text(array[i][0])));

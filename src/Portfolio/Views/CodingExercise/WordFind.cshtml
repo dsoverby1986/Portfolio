@@ -21,7 +21,7 @@ text file (i.e. the number of occurrences of “Alice” in the first chapter of
             var text = "";
             var reader = new FileReader();
             reader.onload = function (evt) {
-                var word = $('#word').val();
+                var word = $('#word').val().toLowerCase();
                 var counter = 0;
                 output.text("");
                 result.text("");
@@ -45,13 +45,16 @@ text file (i.e. the number of occurrences of “Alice” in the first chapter of
                 //This loop changes all of the strings in the collection array to have all lowercase characters
                 for (var i = 0; i < array.length; i++) {
                     array[i] = array[i].toLowerCase();
-                }
-                //This loop and subsequent conditional statement find the given word in the array and count how many occurrences there are.
-                for (var i = 0; i < array.length; i++) {
-                    if(array[i] === word) {
+                    if (array[i] === word) {
                         counter += 1;
                     }
                 }
+                //This loop and subsequent conditional statement find the given word in the array and count how many occurrences there are.
+                /*for (var i = 0; i < array.length; i++) {
+                    if(array[i] === word) {
+                        counter += 1;
+                    }
+                }*/
                 result.text(counter);
             };
             input.change(function (evt) {

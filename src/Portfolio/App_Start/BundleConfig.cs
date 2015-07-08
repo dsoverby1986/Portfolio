@@ -25,7 +25,14 @@ namespace Portfolio
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/Solid/style.css",
+                      "~/Content/Solid/font-awesome.min.css",
+                      "~/Content/Solid/hoverex-all.css"));
+            /*<link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">*/
         }
     }
 }

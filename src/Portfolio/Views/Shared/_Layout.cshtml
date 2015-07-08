@@ -6,43 +6,84 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href=""
-
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" @Html.ActionLink("SHANE OVERBY", "Index", "Home")></a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-
-                    <li>@Html.ActionLink("Code Exercises", "Index", "CodingExercise")</li>
-                   
+                    <li class="active">@Html.ActionLink("HOME", "Index", "Home")</li>
+                    <li>@Html.ActionLink("ABOUT", "About", "Home")</li>
+                    <li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Code Exercises", "Index", "CodingExercise")</li>
+                        </ul>
+                    </li>
                 </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+            </div><!--/.nav-collapse -->
         </div>
     </div>
-    <div class="container body-content">
+    
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        <div id="footerwrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h4>About</h4>
+                        <div class="hline-w"></div>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>Social Links</h4>
+                        <div class="hline-w"></div>
+                        <p>
+                            <a href="https://github.com/dsoverby1986"><i class="fa fa-github"></i></a>
+                            <a href="https://www.facebook.com/shane.overby.7"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/1_2173"><i class="fa fa-twitter"></i></a>
+                            <a href="https://instagram.com/prettymuchwhatiexpected/"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UC7rMwCpR_vRPAYzsX09lXew"><i class="fa fa-youtube"></i></a>
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>Our Bunker</h4>
+                        <div class="hline-w"></div>
+                        <p>
+                            120 Meta Breeze Lane<br />
+                            Mocksville, North Carolina 27028<br />
+                            United States.<br />
+                        </p>
+                    </div>
 
+                </div><! --/row -->
+            </div><! --/container -->
+        </div><! --/footerwrap -->
+     
+    
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+      
+        <script src="~/Scripts/Solid/custom.js"></script>
+    <script src="~/Scripts/Solid/jquery.hoverdir.js"></script>
+    <script src="~/Scripts/Solid/jquery.hoverex.min.js"></script>
+    <script src="~/Scripts/Solid/jquery.isotope.min.js"></script>
+    <script src="~/Scripts/Solid/jquery.prettyPhoto.js"></script>
+    <script src="~/Scripts/Solid/retina-1.1.0.js"></script>
+
+  
+
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

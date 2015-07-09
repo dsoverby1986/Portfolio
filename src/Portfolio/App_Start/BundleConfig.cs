@@ -21,18 +21,17 @@ namespace Portfolio
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/SyntaxHighlighter/shBrushJScript.js",
+                      "~/Scripts/SyntaxHighlighter/shCore.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/Solid/style.css",
+                      "~/Content/style.css",
                       "~/Content/Solid/font-awesome.min.css",
-                      "~/Content/Solid/hoverex-all.css"));
-            /*<link href="assets/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">*/
+                      "~/Content/hoverex-all.css",
+                      "~/Content/SyntaxHighlighter/shCore.css",
+                      "~/Content/SyntaxHighlighter/shThemeDefault.css"));
         }
     }
 }

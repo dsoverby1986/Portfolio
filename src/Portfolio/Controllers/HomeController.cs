@@ -27,6 +27,25 @@ namespace Portfolio.Controllers
             return View();
         }
 
+        public ActionResult Portfolio()
+        {
+            ViewBag.Message = "Your porfolio page.";
 
+            return View();
+        }
+
+        public ActionResult Blog()
+        {
+            ViewBag.Message = "Your blog page.";
+
+            return View();
+        }
+
+        public ActionResult SinglePost()
+        {
+            ViewBag.Message = "Your single post page.";
+
+            return View();
+        }
     }
 }

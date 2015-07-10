@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Shane Overby</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -25,9 +25,10 @@
                     <li>@Html.ActionLink("ABOUT", "About", "Home")</li>
                     <li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
+                            <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
                             <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
                             <li>@Html.ActionLink("Single Post","SinglePost","Home")</li>
                         </ul>
@@ -45,7 +46,8 @@
                     <div class="col-lg-4">
                         <h4>About</h4>
                         <div class="hline-w"></div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <p>I was introduced to software/web development in early 2014. I hope to begin my career in development as a back-end 
+                        programmer, although, I do very much enjoy the front-end work as well.</p>
                     </div>
                     <div class="col-lg-4">
                         <h4>Social Links</h4>
@@ -59,10 +61,10 @@
                         </p>
                     </div>
                     <div class="col-lg-4">
-                        <h4>Our Bunker</h4>
+                        <h4>Location</h4>
                         <div class="hline-w"></div>
                         <p>
-                            120 Meta Breeze Lane<br />
+                            <!--120 Meta Breeze Lane<br />-->
                             Mocksville, North Carolina 27028<br />
                             United States.<br />
                         </p>
@@ -76,14 +78,14 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
       
-        <script src="~/Scripts/Solid/custom.js"></script>
+    <script src="~/Scripts/Solid/custom.js"></script>
     <script src="~/Scripts/Solid/jquery.hoverdir.js"></script>
     <script src="~/Scripts/Solid/jquery.hoverex.min.js"></script>
     <script src="~/Scripts/Solid/jquery.isotope.min.js"></script>
     <script src="~/Scripts/Solid/jquery.prettyPhoto.js"></script>
     <script src="~/Scripts/Solid/retina-1.1.0.js"></script>
 
-
+    @RenderSection("modals", required: false)
     @RenderSection("scripts", required: false)
 </body>
 </html>

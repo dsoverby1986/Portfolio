@@ -2,94 +2,6 @@
     ViewBag.Title = "Home Page";
 }
 
-
-@section scripts{
-
-    <script>
-    // Portfolio
-    (function ($) {
-        "use strict";
-        var $container = $('.portfolio'),
-            $items = $container.find('.portfolio-item'),
-            portfolioLayout = 'fitRows';
-
-        if ($container.hasClass('portfolio-centered')) {
-            portfolioLayout = 'masonry';
-        }
-
-        $container.isotope({
-            filter: '*',
-            animationEngine: 'best-available',
-            layoutMode: portfolioLayout,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            },
-            masonry: {
-            }
-        }, refreshWaypoints());
-
-        function refreshWaypoints() {
-            setTimeout(function () {
-            }, 1000);
-        }
-
-        $('nav.portfolio-filter ul a').on('click', function () {
-            var selector = $(this).attr('data-filter');
-            $container.isotope({ filter: selector }, refreshWaypoints());
-            $('nav.portfolio-filter ul a').removeClass('active');
-            $(this).addClass('active');
-            return false;
-        });
-
-        function getColumnNumber() {
-            var winWidth = $(window).width(),
-			columnNumber = 1;
-
-            if (winWidth > 1200) {
-                columnNumber = 5;
-            } else if (winWidth > 950) {
-                columnNumber = 4;
-            } else if (winWidth > 600) {
-                columnNumber = 3;
-            } else if (winWidth > 400) {
-                columnNumber = 2;
-            } else if (winWidth > 250) {
-                columnNumber = 1;
-            }
-            return columnNumber;
-        }
-
-        function setColumns() {
-            var winWidth = $(window).width(),
-            columnNumber = getColumnNumber(),
-            itemWidth = Math.floor(winWidth / columnNumber);
-
-            $container.find('.portfolio-item').each(function () {
-                $(this).css({
-                    width: itemWidth + 'px'
-                });
-            });
-        }
-
-        function setPortfolio() {
-            setColumns();
-            $container.isotope('reLayout');
-        }
-
-        $container.imagesLoaded(function () {
-            setPortfolio();
-        });
-
-        $(window).on('resize', function () {
-            setPortfolio();
-        });
-    })(jQuery);
-</script>
-
-    }
-
 <div id="headerwrap">
     <div class="container">
         <div class="row">
@@ -100,7 +12,7 @@
                 <h5>More Lorem Ipsum added here too.</h5>
             </div>
             <div class="col-lg-8 col-lg-offset-2 himg">
-                <img src="~/img/browser.png" class="img-responsive"/>
+                <img src="~/img/browser.png" class="img-responsive" />
             </div>
         </div><!-- /row -->
     </div> <!-- /container -->
@@ -284,7 +196,7 @@
         <div class="col-lg-4 col-lg-offset-1">
             <h4>More About Our Agency.</h4>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-            <p><br /><a href="about.html" class="btn btn-theme">More Info</a></p>
+            <p><br /><a href="@Url.Action("About","Home")" class="btn btn-theme">More About Shane</a></p>
         </div>
 
         <div class="col-lg-3">
@@ -348,3 +260,89 @@
         </div><! --/row -->
     </div><! --/container -->
 </div><! --/cwrap -->
+
+@section scripts{
+
+    <script>
+        // Portfolio
+        (function ($) {
+            "use strict";
+            var $container = $('.portfolio'),
+                $items = $container.find('.portfolio-item'),
+                portfolioLayout = 'fitRows';
+
+            if ($container.hasClass('portfolio-centered')) {
+                portfolioLayout = 'masonry';
+            }
+
+            $container.isotope({
+                filter: '*',
+                animationEngine: 'best-available',
+                layoutMode: portfolioLayout,
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                },
+                masonry: {
+                }
+            }, refreshWaypoints());
+
+            function refreshWaypoints() {
+                setTimeout(function () {
+                }, 1000);
+            }
+
+            $('nav.portfolio-filter ul a').on('click', function () {
+                var selector = $(this).attr('data-filter');
+                $container.isotope({ filter: selector }, refreshWaypoints());
+                $('nav.portfolio-filter ul a').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            function getColumnNumber() {
+                var winWidth = $(window).width(),
+                columnNumber = 1;
+
+                if (winWidth > 1200) {
+                    columnNumber = 5;
+                } else if (winWidth > 950) {
+                    columnNumber = 4;
+                } else if (winWidth > 600) {
+                    columnNumber = 3;
+                } else if (winWidth > 400) {
+                    columnNumber = 2;
+                } else if (winWidth > 250) {
+                    columnNumber = 1;
+                }
+                return columnNumber;
+            }
+
+            function setColumns() {
+                var winWidth = $(window).width(),
+                columnNumber = getColumnNumber(),
+                itemWidth = Math.floor(winWidth / columnNumber);
+
+                $container.find('.portfolio-item').each(function () {
+                    $(this).css({
+                        width: itemWidth + 'px'
+                    });
+                });
+            }
+
+            function setPortfolio() {
+                setColumns();
+                $container.isotope('reLayout');
+            }
+
+            $container.imagesLoaded(function () {
+                setPortfolio();
+            });
+
+            $(window).on('resize', function () {
+                setPortfolio();
+            });
+        })(jQuery);
+    </script>
+}

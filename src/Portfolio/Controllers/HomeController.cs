@@ -15,35 +15,42 @@ namespace Portfolio.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "About Shane Overby";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact Shane Overby";
 
             return View();
         }
 
         public ActionResult Portfolio()
         {
-            ViewBag.Message = "Your porfolio page.";
+            ViewBag.Message = "Shane Overby's Portfolio";
+
+            return View();
+        }
+
+        public ActionResult Resume()
+        {
+            ViewBag.Message = "Shane Overby's Resume";
 
             return View();
         }
 
         public ActionResult Blog()
         {
-            ViewBag.Message = "Your blog page.";
+            ViewBag.Message = "Shane Overby's Blog";
 
             return View();
         }
 
         public ActionResult SinglePost()
         {
-            ViewBag.Message = "Your single post page.";
+            ViewBag.Message = "Single Blog Posts for Shane Overby";
 
             return View();
         }

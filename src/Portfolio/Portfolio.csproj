@@ -323,6 +323,18 @@
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\CodingExercises\Armstrong.js" />
+    <Content Include="Scripts\CodingExercises\Factorial.js" />
+    <Content Include="Scripts\CodingExercises\FizzBuzz.js" />
+    <Content Include="Scripts\CodingExercises\HappyNumbers.js" />
+    <Content Include="Scripts\CodingExercises\LongestWord.js" />
+    <Content Include="Scripts\CodingExercises\LongWords.js" />
+    <Content Include="Scripts\CodingExercises\MaxOfFive.js" />
+    <Content Include="Scripts\CodingExercises\Palindrome.js" />
+    <Content Include="Scripts\CodingExercises\PerfectNumbers.js" />
+    <Content Include="Scripts\CodingExercises\SumMultiply.js" />
+    <Content Include="Scripts\CodingExercises\WordFind.js" />
+    <Content Include="Scripts\CodingExercises\WordFrequency.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
@@ -333,6 +345,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\Popover.js" />
+    <Content Include="Scripts\Portfolio.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -423,6 +437,18 @@
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Home\SinglePost.cshtml" />
     <Content Include="Views\Home\Resume.cshtml" />
+    <Content Include="Views\Shared\MaxOfFivePartial.cshtml" />
+    <Content Include="Views\Shared\SumMultiplyPartial.cshtml" />
+    <Content Include="Views\Shared\FactorialPartial.cshtml" />
+    <Content Include="Views\Shared\PalindromePartial.cshtml" />
+    <Content Include="Views\Shared\FizzBuzzPartial.cshtml" />
+    <Content Include="Views\Shared\PerfectNumbersPartial.cshtml" />
+    <Content Include="Views\Shared\HappyNumbersPartial.cshtml" />
+    <Content Include="Views\Shared\ArmstrongNumbersPartial.cshtml" />
+    <Content Include="Views\Shared\LongestWordPartial.cshtml" />
+    <Content Include="Views\Shared\LongWordsPartial.cshtml" />
+    <Content Include="Views\Shared\WordFrequencyPartial.cshtml" />
+    <Content Include="Views\Shared\WordFindPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

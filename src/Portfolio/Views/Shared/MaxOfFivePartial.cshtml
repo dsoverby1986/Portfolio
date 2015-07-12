@@ -1,0 +1,21 @@
+﻿<div class="col-lg-5 col-lg-offset-1">
+    <div class="spacing">
+        <h4>Max. Of Five</h4>
+        <h4>Directions:</h4>
+        <p>Define a funciton maxOfFive() that takes five numbers as arguments and returns the largest of them.</p>
+        <div id="numInputs">
+            @for (int i = 0; i < 5; i++)
+            {
+                <input type="number" required style="width: 4em" />
+            }
+        </div>
+
+        <p>
+            <button id="largestButton" style="margin-top: 10px">Take It To The Max!</button>
+        </p>
+
+        <p id="mofOutput">
+            The largest value is: <span id="mofResult"></span>
+        </p>
+    </div>
+</div>

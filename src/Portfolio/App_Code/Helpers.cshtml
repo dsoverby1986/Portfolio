@@ -1,0 +1,7 @@
+﻿@helper CodeSnippet(string virtualPath, string brush, System.Web.Mvc.HtmlHelper html)
+{
+
+    var absPath = Server.MapPath(virtualPath);
+    var text = File.ReadAllText(absPath).Replace("<", "&lt;");
+    <pre class="brush: @brush">@html.Raw(text)</pre>
+}

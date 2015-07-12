@@ -321,6 +321,7 @@
     </Content>
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="App_Code\Helpers.cshtml" />
     <None Include="Properties\PublishProfiles\DSOverby.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

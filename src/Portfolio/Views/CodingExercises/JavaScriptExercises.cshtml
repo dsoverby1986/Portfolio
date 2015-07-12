@@ -1,0 +1,575 @@
+﻿
+@{
+    ViewBag.Title = "JavaScript Exercises";
+}
+<!-- *****************************************************************************************************************
+     BLUE WRAP
+     ***************************************************************************************************************** -->
+<div id="blue">
+    <div class="container">
+        <div class="row">
+            <h3>JavaScript Exercises</h3>
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+
+    <!-- *****************************************************************************************************************
+     TITLE & CONTENT
+     ***************************************************************************************************************** -->
+    <div class="container mtb">
+        <a class="navbar-left" href="@Url.Action("Portfolio","Home")">Portfolio</a>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-1 centered">
+                <h2>JavaScript Exercises</h2>
+                <br>
+                <div class="hline"></div>
+            </div>
+        </div>
+    </div><!--/container -->
+
+<!-- *****************************************************************************************************************
+ PORTFOLIO SECTION
+ ***************************************************************************************************************** -->
+<div id="portfoliowrap">
+    <!--<h3>JavaScript Exercises</h3>-->
+    <div class="portfolio-centered">
+        <div class="recentitems portfolio">
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------Max Of Five--------------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_09.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Max Of Five</h3>
+                            <span data-toggle="modal" data-target="#max">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("MaxOfFive","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"
+                               ><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------SumMultiply--------------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item web-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_02.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">SumMultiply</h3>
+                            <span data-toggle="modal" data-target="#sumMultiply">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("SumMultiply","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"
+                               ><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------Factorial----------------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_03.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Factorial</h3>
+                            <span data-toggle="modal" data-target="#factorial">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("Factorial","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"
+                               ><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------Palindrome---------------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_04.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Palindrome</h3>
+                            <span data-toggle="modal" data-target="#palindrome">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("Palindrome","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"
+                               ><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------FizzBuzz------------------------------------------------------------------>
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item books">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_05.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">FizzBuzz</h3>
+                            <span data-toggle="modal" data-target="#fizzBuzz">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("FizzBuzz","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------Perfect Numbers----------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_06.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Perfect Numbers</h3>
+                            <span data-toggle="modal" data-target="#perfectNumbers">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("PerfectNumbers","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------Happy Numbers------------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item books">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_07.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Happy Numbers</h3>
+                            <span data-toggle="modal" data-target="#happyNumbers">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("HappyNumbers","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------Armstrong Numbers--------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_08.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Armstrong Numbers</h3>
+                            <span data-toggle="modal" data-target="#armstrongNumbers">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("Armstrong","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------Longest Word-------------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item web-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_01.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Longest Word</h3>
+                            <span data-toggle="modal" data-target="#longestWord">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("LongestWord","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp
+                               data-toggle=" popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------Long Word----------------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item books">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_10.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Long Word</h3>
+                            <span data-toggle="modal" data-target="#longWord">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("LongWords","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle=" popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------Word Frequency------------------------------------------------------------>
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_09.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Word Frequency</h3>
+                            <span data-toggle="modal" data-target="#wordFrequency">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("WordFrequency","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle=" popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <!----------------------------------------------------Word Find----------------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            <div class="portfolio-item web-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_02.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Word Find</h3>
+                            <span data-toggle="modal" data-target="#wordFind">
+                                <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
+                                   data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
+                            </span>
+                            <a href="@Url.Action("WordFind","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle=" popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+        </div><!-- portfolio -->
+    </div><!-- portfolio container -->
+</div><!--/Portfoliowrap -->
+<!--**************************************************************************************************************************-->
+<!--***************************************************MODALS*****************************************************************-->
+<!--**************************************************************************************************************************-->
+@section modals {
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------Max Of Five--------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="max" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="mofDismiss">x</button>
+                <h1 class="modal-title" id="myModalLabel">Max Of Five</h1>                     <!--Max Of Five-->
+            </div>
+            <div class="modal-body col-sm-12" id="maxMod">
+                <div class="row">
+                        @{Html.RenderPartial("MaxOfFivePartial");}
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------SumMultiply--------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="sumMultiply" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">SumMultiply</h1>                     <!--SumMultiply-->
+            </div>
+            <div class="modal-body col-sm-12" id="sumMultiplyMod">
+                <div class="row">
+                    @{Html.RenderPartial("SumMultiplyPartial");}
+                </div>
+                </div>
+                <div class="modal-footer no-margin">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------Factorial----------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="factorial" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Factorial</h1>                     <!--Factorial-->
+            </div>
+            <div class="modal-body col-sm-12" id="factorialMod">
+                <div class="row">
+                    @{Html.RenderPartial("FactorialPartial");}
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------Palindrome---------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="palindrome" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Palindrome</h1>                     <!--Palindrome-->
+            </div>
+            <div class="modal-body col-sm-12" id="palindromeMod">
+                <div class="row">
+                    @{Html.RenderPartial("PalindromePartial");}
+                    </div>
+                </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------FizzBuzz------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="fizzBuzz" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">FizzBuzz</h1>                     <!--FizzBuzz-->
+            </div>
+            <div class="modal-body col-sm-12" id="fizzBuzzMod">
+                <div class="row">
+                    @{Html.RenderPartial("FizzBuzzPartial");}
+                    </div>
+                </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------Perfect Numbers----------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="perfectNumbers" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Perfect Numbers</h1>                     <!--Perfect Numbers-->
+            </div>
+            <div class="modal-body col-sm-12" id="perfectNumbersMod">
+                <div class="row">
+                    @{Html.RenderPartial("PerfectNumbersPartial");}
+                    </div>
+                </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------Happy Numbers------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="happyNumbers" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Happy Numbers</h1>                     <!--Happy Numbers-->
+            </div>
+            <div class="modal-body col-sm-12" id="happyNumbersMod">
+                <div class="row">
+                    @{Html.RenderPartial("HappyNumbersPartial");}
+                    </div>
+                </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------Armstrong Numbers--------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="armstrongNumbers" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Armstrong Numbers</h1>                     <!--Armstrong Numbers-->
+            </div>
+            <div class="modal-body col-sm-12" id="armstrongNumbersMod">
+                <div class="row">
+                    @{Html.RenderPartial("ArmstrongNumbersPartial");}
+                    </div>
+                </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------Longest Word-------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="longestWord" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Longest Word</h1>                     <!--Longest Word-->
+            </div>
+            <div class="modal-body col-sm-12" id="longestWordMod">
+                <div class="row">
+                    @{Html.RenderPartial("LongestWordPartial");}
+                    </div>
+                </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------Long Words----------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="longWord" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Long Word</h1>                     <!--Long Word-->
+            </div>
+            <div class="modal-body col-sm-12" id="longWordMod">
+                <div class="row">
+                    @{Html.RenderPartial("LongWordsPartial");}
+                    </div>
+                </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------Word Frequency------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="wordFrequency" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Word Frequency</h1>                     <!--Word Frequency-->
+            </div>
+            <div class="modal-body col-sm-12" id="wordFrequencyMod">
+                <div class="row">
+                    @{Html.RenderPartial("WordFrequencyPartial");}
+                    </div>
+                </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------Word Find----------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------>
+<div class="modal fade" id="wordFind" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Word Find</h1>                     <!--Word Find-->
+            </div>
+            <div class="modal-body col-sm-12" id="wordFindMod">
+                <div class="row">
+                    @{Html.RenderPartial("WordFindPartial");}
+                    </div>
+                </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+}
+<!--**************************************************************************************************************************-->
+<!--***************************************************SCRIPTS****************************************************************-->
+<!--**************************************************************************************************************************-->
+@section scripts {
+    <script src="~/Scripts/Portfolio.js"></script><!------------------------Portfolio Layout-->
+    <script src="~/Scripts/Popover.js"></script><!--------------------------Popover-->
+    <script src="~/Scripts/CodingExercises/MaxOfFive.js"></script><!--------Max Of Five-->
+    <script src="~/Scripts/CodingExercises/SumMultiply.js"></script><!------SumMultiply-->
+    <script src="~/Scripts/CodingExercises/Factorial.js"></script><!--------Factorial-->
+    <script src="~/Scripts/CodingExercises/Palindrome.js"></script><!-------Palindrome-->
+    <script src="~/Scripts/CodingExercises/FizzBuzz.js"></script><!---------FizzBuzz-->
+    <script src="~/Scripts/CodingExercises/PerfectNumbers.js"></script><!---Perfect Numbers-->
+    <script src="~/Scripts/CodingExercises/HappyNumbers.js"></script><!-----Happy Numbers-->
+    <script src="~/Scripts/CodingExercises/Armstrong.js"></script><!--------Armstrong Numbers-->
+    <script src="~/Scripts/CodingExercises/LongestWord.js"></script><!------Longest Word-->
+    <script src="~/Scripts/CodingExercises/LongWords.js"></script><!--------Long Words-->
+    <script src="~/Scripts/CodingExercises/WordFrequency.js"></script><!----Word Frequency-->
+    <script src="~/Scripts/CodingExercises/WordFind.js"></script><!---------Word Find-->
+@*    <script type="text/javascript" src="js/shCore.js"></script><!-----------Syntax Highlighter-->
+    <script type="text/javascript" src="css/shBrushJScript.js"></script><!--Syntax Highlighter-->
+    <script type="text/javascript">SyntaxHighlighter.all();</script><!------Syntax Highlighter-->*@
+}

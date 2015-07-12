@@ -26,15 +26,18 @@
                     <li class="active">@Html.ActionLink("HOME", "Index", "Home")</li>
                     <li>@Html.ActionLink("ABOUT", "About", "Home")</li>
                     <li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
-                            <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
-                            <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
-                            <li>@Html.ActionLink("Single Post","SinglePost","Home")</li>
-                        </ul>
-                    </li>
+                    <li>@Html.ActionLink("PORTFOLIO", "Portfolio", "Home")</li>
+                    <li>@Html.ActionLink("RESUME", "Resume", "Home")</li>
+                    <li>@Html.ActionLink("BLOG", "Blog", "Home")</li>
+                    @*<li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
+            <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
+            <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
+            <!--<li>@Html.ActionLink("Single Post","SinglePost","Home")</li>-->
+        </ul>
+    </li>*@
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

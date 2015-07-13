@@ -19,17 +19,11 @@
 <div class="container mt">
     <a class="navbar-right" href="@Url.Action("JavaSCriptExercises","CodingExercises")">JavaScript Exercises</a>
     <div class="row">
-        @{Html.RenderPartial("FizzBuzzPartial");}
-        <div class="col-lg-4 col-lg-offset-1">
-            <div class="spacing"></div>
-            <h4>Project Details</h4>
-            <div class="hline"></div>
-            <p><b>Date:</b> July 8, 2015</p>
-            <p><b>Author:</b> Shane Overby</p>
-            <p><b>Categories:</b> JavaScript, jQuery</p>
-            <p><b>Tagged:</b> Development</p>
-            <p><b>Client:</b> CoderFoundry</p>
-            <p><b>Website:</b> <a href="https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=azurebg_US_sem_google_BR_BRTop_Nontest_FreeTrial_azure&WT.srch=1">Site will be hosted by Azure</a></p>
+        <div class="col-lg-7">
+            @{Html.RenderPartial("FizzBuzzPartial");}
+        </div>
+        <div class="col-lg-5">
+            @Helpers.CodeSnippet("~/Scripts/CodingExercises/FizzBuzz.js", "js", Html)
         </div>
     </div><! --/row -->
 </div><! --/container -->
@@ -41,14 +35,58 @@
     <div class="portfolio-centered">
         <h3>Related Works.</h3>
         <div class="recentitems portfolio">
-            <div class="portfolio-item graphic-design">
+
+            <div class="portfolio-item web-design">
                 <div class="he-wrap tpl6">
-                    <img src="~/img/portfolio/portfolio_09.jpg" alt="">
+                    <img src="~/img/portfolio/portfolio_02.jpg" alt="" />
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_09.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">SumMultiply</h3>
+                            <a href="@Url.Action("SumMultiply","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_04.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Palindrome</h3>
+                            <a href="@Url.Action("Palindrome","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_06.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Perfect Numbers</h3>
+                            <a href="@Url.Action("PerfectNumbers","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="~/img/portfolio/portfolio_08.jpg" alt="" />
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Armstrong Numbers</h3>
+                            <a href="@Url.Action("Armstrong","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -56,60 +94,24 @@
 
             <div class="portfolio-item web-design">
                 <div class="he-wrap tpl6">
-                    <img src="~/img/portfolio/portfolio_02.jpg" alt="">
+                    <img src="~/img/portfolio/portfolio_01.jpg" alt="" />
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Web Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_02.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">Longest Word</h3>
+                            <a href="@Url.Action("LongestWord","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
+                               data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
             </div><!-- end col-12 -->
 
-            <div class="portfolio-item graphic-design">
-                <div class="he-wrap tpl6">
-                    <img src="~/img/portfolio/portfolio_03.jpg" alt="">
-                    <div class="he-view">
-                        <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_03.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        </div><!-- he bg -->
-                    </div><!-- he view -->
-                </div><!-- he wrap -->
-            </div><!-- end col-12 -->
-
-            <div class="portfolio-item graphic-design">
-                <div class="he-wrap tpl6">
-                    <img src="~/img/portfolio/portfolio_04.jpg" alt="">
-                    <div class="he-view">
-                        <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_04.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        </div><!-- he bg -->
-                    </div><!-- he view -->
-                </div><!-- he wrap -->
-            </div><!-- end col-12 -->
-
-            <div class="portfolio-item graphic-design">
-                <div class="he-wrap tpl6">
-                    <img src="~/img/portfolio/portfolio_05.jpg" alt="">
-                    <div class="he-view">
-                        <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_04.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        </div><!-- he bg -->
-                    </div><!-- he view -->
-                </div><!-- he wrap -->
-            </div><!-- end col-12 -->
         </div><!-- portfolio -->
     </div><!-- portfolio container -->
 </div><!--/Portfoliowrap -->
 
 @section scripts {
 <script src="~/Scripts/Portfolio.js"></script>
+<script src="~/Scripts/Popover.js"></script>
 <script src="~/Scripts/CodingExercises/FizzBuzz.js"></script>
 }

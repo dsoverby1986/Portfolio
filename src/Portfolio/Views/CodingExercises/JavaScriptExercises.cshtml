@@ -211,8 +211,8 @@
                                 <a data-toggle="popover" title="" data-content="Demo" data-animate="fadeInUp"
                                    data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
                             </span>
-                            <a href="@Url.Action("LongestWord","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp
-                               data-toggle=" popover" title="" data-content="View Code"
+                            <a href="@Url.Action("LongestWord","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
+                               data-toggle="popover" title="" data-content="View Code"
                                data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
@@ -232,7 +232,7 @@
                                    data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
                             </span>
                             <a href="@Url.Action("LongWords","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
-                               data-toggle=" popover" title="" data-content="View Code"
+                               data-toggle="popover" title="" data-content="View Code"
                                data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
@@ -252,7 +252,7 @@
                                    data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
                             </span>
                             <a href="@Url.Action("WordFrequency","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
-                               data-toggle=" popover" title="" data-content="View Code"
+                               data-toggle="popover" title="" data-content="View Code"
                                data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
@@ -272,12 +272,13 @@
                                    data-trigger="hover" data-placement="bottom" class="dmbutton a2"><i class="fa fa-search"></i></a>
                             </span>
                             <a href="@Url.Action("WordFind","CodingExercises")" class="dmbutton a2" data-animate="fadeInUp"
-                               data-toggle=" popover" title="" data-content="View Code"
+                               data-toggle="popover" title="" data-content="View Code"
                                data-trigger="hover" data-placement="top"><i class="fa fa-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
             </div><!-- end col-12 -->
+
         </div><!-- portfolio -->
     </div><!-- portfolio container -->
 </div><!--/Portfoliowrap -->
@@ -299,7 +300,9 @@
             </div>
             <div class="modal-body col-sm-12" id="maxMod">
                 <div class="row">
+                    <div class="spacing co-lg-offset-1">
                         @{Html.RenderPartial("MaxOfFivePartial");}
+                    </div>
                 </div>
             </div>
             <div class="modal-footer no-margin">

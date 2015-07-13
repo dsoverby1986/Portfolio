@@ -11,7 +11,6 @@
                 wfResult.text("");
                 wfOutput.text(evt.target.result);
                 wfText = evt.target.result;
-                //As ashamed as I am to admit it, this is the easiest way that I KNOW of to get rid of these characters. Yes, I'm a loser.
                 wfText = wfText.replace(/\//g, " ");
                 wfText = wfText.replace(/\\/g, " ");
                 wfText = wfText.replace(/--/g, " ");

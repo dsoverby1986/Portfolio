@@ -2,7 +2,6 @@
 
 
     var estInput = $('#estInput');
-    var estOutput = $('#estDisplay');
     var estReader = new FileReader();
 
     estReader.onload = function (evt) {
@@ -11,9 +10,8 @@
         var estText = "";
         var estArray;
         var estCollection = [];
-        estOutput.text("");
+        //estOutput.text("");
         estResult.text("");
-        estOutput.text(evt.target.result);
         estText = evt.target.result;
         estText = estText.replace(/\//g, " ");
         estText = estText.replace(/\\/g, " ");

@@ -1,7 +1,5 @@
 ﻿        $(function () {
             var freqInput = $('#freqInput');
-            var freqOutput = $('#freqDisplay');
-            var freqResult = $('#freqResult');
             var freqTable = $('#freqMyTable');
             var freqBody = $('#freqBody');
 
@@ -14,9 +12,6 @@
                 var freqText = "";
                 var freqArray;
                 var freqDict = {};
-                freqOutput.text("");
-                freqResult.text("");
-                freqOutput.text(evt.target.result);
 
                 freqText = evt.target.result;
 

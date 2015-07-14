@@ -1,6 +1,5 @@
 ﻿       $(function () {
            var lwInput = $('#lwInput');
-           var lwOutput = $('#lwContent');
            var lwResult = $('#lwResult');
            var lwOutLong = $('#lwOutLong');
            var lwReader = new FileReader();
@@ -11,9 +10,7 @@
                var lwHowLong = parseInt($('#lwStringLength').val());
                document.getElementById('lwOutLong').innerHTML = lwHowLong.toString();
                lwResult.text("");
-               lwOutput.text("");
                lwText = evt.target.result;
-               lwOutput.text(evt.target.result);
                lwText = lwText.replace(/\//g, " ");
                lwText = lwText.replace(/\\/g, " ");
                lwText = lwText.replace(/--/g, " ");

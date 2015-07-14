@@ -272,9 +272,9 @@
     <Content Include="img\css\prettyPhoto\light_square\btnNext.png" />
     <Content Include="img\css\prettyPhoto\light_square\btnPrevious.png" />
     <Content Include="img\css\prettyPhoto\light_square\sprite.png" />
-    <Content Include="img\landing.jpg" />
     <Content Include="img\landingP.png" />
     <Content Include="img\portfolio\javascript-logo-png-200x200.png" />
+    <Content Include="img\portfolio\MaxOfFive.jpg" />
     <Content Include="img\portfolio\portfolio_01.jpg" />
     <Content Include="img\portfolio\portfolio_02.jpg" />
     <Content Include="img\portfolio\portfolio_03.jpg" />

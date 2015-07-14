@@ -1,15 +1,12 @@
 ﻿        $(function () {
             var wfInput = $('#wfInput');
-            var wfOutput = $('#wfDisplay');
             var wfResult = $('#wfResult');
             var wfText = "";
             var wfReader = new FileReader();
             wfReader.onload = function (evt) {
                 var wfWord = $('#wfWord').val().toLowerCase();
                 var wfCounter = 0;
-                wfOutput.text("");
                 wfResult.text("");
-                wfOutput.text(evt.target.result);
                 wfText = evt.target.result;
                 wfText = wfText.replace(/\//g, " ");
                 wfText = wfText.replace(/\\/g, " ");

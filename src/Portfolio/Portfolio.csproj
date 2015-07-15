@@ -187,13 +187,17 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogPostsController.cs" />
     <Compile Include="Controllers\CodingExercisesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,8 +277,17 @@
     <Content Include="img\css\prettyPhoto\light_square\btnPrevious.png" />
     <Content Include="img\css\prettyPhoto\light_square\sprite.png" />
     <Content Include="img\landingP.png" />
+    <Content Include="img\portfolio\Armstrong.png" />
+    <Content Include="img\portfolio\Factorial.png" />
+    <Content Include="img\portfolio\FizzBuzz.png" />
+    <Content Include="img\portfolio\Happy_Numbers.png" />
     <Content Include="img\portfolio\javascript-logo-png-200x200.png" />
+    <Content Include="img\portfolio\Longest_Word.png" />
+    <Content Include="img\portfolio\Long_Word.png" />
     <Content Include="img\portfolio\MaxOfFive.jpg" />
+    <Content Include="img\portfolio\Max_Of_Five.png" />
+    <Content Include="img\portfolio\Palindrome.png" />
+    <Content Include="img\portfolio\Perfect_Numbers.png" />
     <Content Include="img\portfolio\portfolio_01.jpg" />
     <Content Include="img\portfolio\portfolio_02.jpg" />
     <Content Include="img\portfolio\portfolio_03.jpg" />
@@ -288,6 +301,9 @@
     <Content Include="img\portfolio\single01.jpg" />
     <Content Include="img\portfolio\single02.jpg" />
     <Content Include="img\portfolio\single03.jpg" />
+    <Content Include="img\portfolio\SumMultiply.png" />
+    <Content Include="img\portfolio\Word_Find.png" />
+    <Content Include="img\portfolio\Word_Frequency.png" />
     <Content Include="img\post01.jpg" />
     <Content Include="img\post02.jpg" />
     <Content Include="img\post03.jpg" />
@@ -323,6 +339,7 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="App_Code\Helpers.cshtml" />
     <None Include="Properties\PublishProfiles\DSOverby.pubxml" />
+    <Content Include="Resume\Overby_Resume_No_Ref.pdf" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -437,7 +454,7 @@
     <Content Include="Views\CodingExercises\WordFrequency.cshtml" />
     <Content Include="Views\CodingExercises\WordFind.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
-    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\BlogPosts\Blog.cshtml" />
     <Content Include="Views\Home\SinglePost.cshtml" />
     <Content Include="Views\Home\Resume.cshtml" />
     <Content Include="Views\Shared\MaxOfFivePartial.cshtml" />
@@ -452,6 +469,11 @@
     <Content Include="Views\Shared\LongWordsPartial.cshtml" />
     <Content Include="Views\Shared\WordFrequencyPartial.cshtml" />
     <Content Include="Views\Shared\WordFindPartial.cshtml" />
+    <Content Include="Views\BlogPosts\Create.cshtml" />
+    <Content Include="Views\BlogPosts\Delete.cshtml" />
+    <Content Include="Views\BlogPosts\Details.cshtml" />
+    <Content Include="Views\BlogPosts\Edit.cshtml" />
+    <Content Include="Views\BlogPosts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

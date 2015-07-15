@@ -41,16 +41,16 @@ namespace Portfolio.Controllers
             return View();
         }
 
-        public ActionResult Blog()
+        public ActionResult SinglePost()
         {
-            ViewBag.Message = "Shane Overby's Blog";
+            ViewBag.Message = "Single Blog Posts for Shane Overby";
 
             return View();
         }
 
-        public ActionResult SinglePost()
+        public ActionResult Blog()
         {
-            ViewBag.Message = "Single Blog Posts for Shane Overby";
+            ViewBag.Message = "Shane Overby's Blog";
 
             return View();
         }

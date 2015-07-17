@@ -75,7 +75,7 @@
 <div id="blue">
     <div class="container">
         <div class="row">
-            <h3>Single Post.</h3>
+            <h3>@Html.DisplayFor(model => Model.Title)</h3>
         </div><!-- /row -->
     </div> <!-- /container -->
 </div><!-- /blue -->
@@ -91,7 +91,8 @@
             <p><img class="img-responsive" src="~/img/post01.jpg"></p>
             <h3 class="ctitle">@Html.DisplayFor(model => model.Title)</h3>
             <p><csmall>Posted: @Html.DisplayFor(model => model.Created)</csmall> | <csmall2>By: Admin - 3 Comments</csmall2></p>
-        <p>@Html.DisplayFor(model => model.Body)</p>
+        <p>@Html.Raw(Model.Body)</p>
+        <p>@Html.DisplayFor(model => model.MediaURL)</p>
             <div class="spacing"></div>
             <h6>SHARE:</h6>
             <p class="share">

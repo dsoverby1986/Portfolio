@@ -15,13 +15,14 @@ namespace Portfolio.Models
         {
             this.Comments = new HashSet<Comment>();
         }
-         [Required]
-         [AllowHtml]
+        
         public int Id { get; set; }
         public System.DateTimeOffset Created { get; set; }
         public Nullable<System.DateTimeOffset> Updated { get; set; }
         public string Title { get; set; }
         public string Slug { get; set; }
+        [Required]
+        [AllowHtml]
         public string Body { get; set; }
         public string MediaURL { get; set; }
         public bool Published { get; set; }

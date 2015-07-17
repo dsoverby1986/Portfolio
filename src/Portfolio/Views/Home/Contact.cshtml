@@ -1,69 +1,175 @@
 ﻿@{
+    Layout = null;
+}
+@{
     ViewBag.Title = "Contact";
 }
-@Layout = null;
-<!-- *****************************************************************************************************************
-     BLUE WRAP
-     ***************************************************************************************************************** -->
-<div id="blue">
-    <div class="container">
-        <div class="row">
-            <h3>Contact.</h3>
-        </div><!-- /row -->
-    </div> <!-- /container -->
-</div><!-- /blue -->
-<!-- *****************************************************************************************************************
- CONTACT WRAP
- ***************************************************************************************************************** -->
-<div id="contactwrap">
-
-    <!-- *****************************************************************************************************************
-     CONTACT FORMS
-     ***************************************************************************************************************** -->
-    <div class="container mtb">
-        <div class="row">
-            <div class="col-lg-8">
-                <h4>What can I help you with?</h4>
-                <div class="hline"></div>
-                <p>@ViewBag.Messagesent</p>
-                <form action="@Url.Action("Contact", "Home")" method="post" role="form">
-                    @Html.AntiForgeryToken()
-                    <div class="form-group">
-                        <label for="Name">Your Name</label>
-                        <input type="text" class="form-control" id="name" name="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="FromEmail">Email address</label>
-                        <input type="email" class="form-control" id="fromEmail" name="FromEmail">
-                    </div>
-                    <div class="form-group">
-                        <label for="Subject">Subject</label>
-                        <input type="text" class="form-control" id="subject" name="Subject">
-                    </div>
-                    <div class="form-group">
-                        <label for="Message">Message</label>
-                        <textarea class="form-control" id="message" rows="3" name="Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-theme">Submit</button>
-                </form>
-            </div><! --/col-lg-8 -->
-
-            <div class="col-lg-4">
-                <h4>Be In Touch</h4>
-                <div class="hline"></div>
-                <p>
-                    Please use the contact form on the left side if you have any questions or requests, concerning my availability and/or services.
-                    I will respond to your message within 24 hours
-                </p>
-                <p>
-                    Email: dsoverby1986@gmail.com<br />
-                    Tel: (336) 251-2173
-                </p>
-                <p>
-                    Mocksville, NC 27028<br />
-                    United States<br />
-                </p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Shane Overby</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" type="text/css" /><!----------Syntax Highlighter-->
+    <link href="~/Content/SyntaxHighlighter/shThemeDefault.css" rel="stylesheet" type="text/css" /><!--Syntax Highlighter-->
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/jquery.dotdotdot.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" @Html.ActionLink("SHANE OVERBY", "Index", "Home")></a>
             </div>
-        </div><! --/row -->
-    </div><! --/container -->
-</div>
+            <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="active">@Html.ActionLink("HOME", "Index", "Home")</li>
+                    <li>@Html.ActionLink("ABOUT", "About", "Home")</li>
+                    <li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("PORTFOLIO", "Portfolio", "Home")</li>
+                    <li>@Html.ActionLink("RESUME", "Resume", "Home")</li>
+                    <li>@Html.ActionLink("BLOG", "Index", "BlogPosts")</li>
+                    <li>@Html.Partial("_LoginPartial")</li>
+                    @*<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
+                                <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
+                                <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
+                                <!--<li>@Html.ActionLink("Single Post","SinglePost","Home")</li>-->
+                            </ul>
+                        </li>*@
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+    <!-- *****************************************************************************************************************
+         BLUE WRAP
+         ***************************************************************************************************************** -->
+    <div id="blue">
+        <div class="container">
+            <div class="row">
+                <h3>Contact.</h3>
+            </div><!-- /row -->
+        </div> <!-- /container -->
+    </div><!-- /blue -->
+    <!-- *****************************************************************************************************************
+     CONTACT WRAP
+     ***************************************************************************************************************** -->
+    <div id="contactwrap">
+
+        <!-- *****************************************************************************************************************
+         CONTACT FORMS
+         ***************************************************************************************************************** -->
+        <div class="container mtb">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h4>What can I help you with?</h4>
+                    <div class="hline"></div>
+                    <p>@ViewBag.Messagesent</p>
+                    <form action="@Url.Action("Contact", "Home")" method="post" role="form">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label for="Name">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="FromEmail">Email address</label>
+                            <input type="email" class="form-control" id="fromEmail" name="FromEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="Subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="Subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="Message">Message</label>
+                            <textarea class="form-control" id="message" rows="3" name="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-theme">Submit</button>
+                    </form>
+                </div><! --/col-lg-8 -->
+
+                <div class="col-lg-4">
+                    <h4>Be In Touch</h4>
+                    <div class="hline"></div>
+                    <p>
+                        Please use the contact form on the left side if you have any questions or requests, concerning my availability and/or services.
+                        I will respond to your message within 24 hours
+                    </p>
+                    <p>
+                        Email: dsoverby1986@gmail.com<br />
+                        Tel: (336) 251-2173
+                    </p>
+                    <p>
+                        Mocksville, NC 27028<br />
+                        United States<br />
+                    </p>
+                </div>
+            </div><! --/row -->
+        </div><! --/container -->
+    </div>
+    <div id="footerwrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h4>About</h4>
+                    <div class="hline-w"></div>
+                    <p>
+                        I was introduced to software/web development in early 2014. I hope to begin my career in development as a back-end
+                        programmer, although, I do very much enjoy the front-end work as well.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <h4>Social Links</h4>
+                    <div class="hline-w"></div>
+                    <p>
+                        <a href="https://github.com/dsoverby1986"><i class="fa fa-github"></i></a>
+                        <a href="https://www.facebook.com/shane.overby.7"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/1_2173"><i class="fa fa-twitter"></i></a>
+                        <a href="https://instagram.com/prettymuchwhatiexpected/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC7rMwCpR_vRPAYzsX09lXew"><i class="fa fa-youtube"></i></a>
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <h4>Location</h4>
+                    <div class="hline-w"></div>
+                    <p>
+                        <!--120 Meta Breeze Lane<br />-->
+                        Mocksville, North Carolina 27028<br />
+                        United States.<br />
+                    </p>
+                </div>
+
+            </div><! --/row -->
+        </div><! --/container -->
+    </div><! --/footerwrap -->
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script src="~/Scripts/Solid/custom.js"></script>
+    <script src="~/Scripts/Solid/jquery.hoverdir.js"></script>
+    <script src="~/Scripts/Solid/jquery.hoverex.min.js"></script>
+    <script src="~/Scripts/Solid/jquery.isotope.min.js"></script>
+    <script src="~/Scripts/Solid/jquery.prettyPhoto.js"></script>
+    <script src="~/Scripts/Solid/retina-1.1.0.js"></script>
+
+    <script src="~/Scripts/SyntaxHighlighter/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
+    <script type="text/javascript">SyntaxHighlighter.all()</script>
+
+
+
+ @*   @RenderSection("modals", required: false)
+    @RenderSection("scripts", required: false)*@
+</body>
+</html>

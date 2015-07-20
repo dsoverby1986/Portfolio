@@ -9,6 +9,8 @@ using System.Web.Mvc;
 
 namespace Portfolio.Controllers
 {
+    /*[Authorize]*/
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()

@@ -34,12 +34,12 @@ namespace Portfolio.Migrations
             {
                 userManager.Create(new ApplicationUser
                     {
-                        UserName = "dsoverby",
+                        UserName = "dsoverby1986@gmail.com",
                         Email = "dsoverby1986@gmail.com",
                         FirstName = "Shane",
                         LastName = "Overby",
                         DisplayName = "shaneOverby"
-                    }, "overby");
+                    }, "Password1!");
             }
 
             var userId = userManager.FindByEmail("dsoverby1986@gmail.com").Id;

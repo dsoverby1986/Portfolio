@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace Portfolio.Controllers
 {
+    /*[Authorize]*/
+    [RequireHttps]
     public class CodingExercisesController : Controller
     {
         // GET: CodingExercise

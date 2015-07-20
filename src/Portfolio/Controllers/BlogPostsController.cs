@@ -11,6 +11,8 @@ using BlogPosts.Models;
 
 namespace Portfolio.Controllers
 {
+    [Authorize]
+    [RequireHttps]
     public class BlogPostsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,7 +20,7 @@ namespace Portfolio.Controllers
         // GET: Blogs
         public ActionResult Index()
         {
-            return View(db.Posts.ToList());
+            return View(db.Posts.OrderByDescending(p => p.Created));
         }
 
         // GET: Blogs/Details/5
@@ -67,7 +69,6 @@ namespace Portfolio.Controllers
                 {
                     blog.Created = DateTimeOffset.Now;
                     blog.Slug = slug;
-
                     db.Posts.Add(blog);
                     db.SaveChanges();
                     return RedirectToAction("Index");

@@ -90,12 +90,12 @@
             <h3 class="ctitle">@Html.DisplayFor(modelItem => item.Title)</h3>
             <p><csmall>Posted: @Html.DisplayFor(modelItem => item.Created)</csmall> | 
             <csmall> Updated: @Html.DisplayFor(modelItem => item.Updated)</csmall> | 
-            <csmall2>By: Admin - 3 Comments</csmall2></p>
-            <div class="wrapper">
+            <csmall2>By: D.S. Overby</csmall2></p>
+            <div class="truncate-me">
                 <p>@Html.Raw(item.Body)</p>
             </div>
+            <p>@Html.ActionLink("[Read More]", "Details", new { id = item.Id })</p>
             <a href="@Html.DisplayFor(modelItem => item.MediaURL)">@Html.DisplayFor(modelItem => item.MediaURL)</a>
-            <p>@Html.ActionLink("[Read More]", "Details", new { id=item.Id })</p>
             <div id="blogControls">
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
@@ -174,8 +174,16 @@
         </div>
     </div><! --/row -->
 </div><! --/container -->
+
+
+@section scripts {
 <script>
     $(function () {
-        $('.wrapper').dotdotdot('...');
+        $('.truncate-me').dotdotdot({
+            ellipsis: "...",
+            height: 200
+        });
+        $(element).attr("id", "theid");
     });
 </script>
+}

@@ -8,8 +8,8 @@
 	URL: http://alvarez.is
 	
 ################################################################# */ 
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,900);
-@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900);
 @import url("prettyPhoto.css") screen;
 @import url("hoverex-all.css") screen;
 
@@ -87,7 +87,6 @@ a:focus {
 ################################################################# */
 .navbar {
 	min-height: 70px;
-	padding-top: 10px;
 	margin-bottom: 0px;
 }
 
@@ -362,7 +361,7 @@ a:focus {
 /* General Tweaks */
 
 #blue {
-	background: #00b3fe;
+	background: #00b3fe;  /*#00b3fe*/
 	margin-top: 60px;
 	margin-bottom: 60px;
 	padding-top: 25px;
@@ -401,7 +400,8 @@ csmall2 {
 /* Contact Page */
 #contactwrap {
 	background: url(../img/contact.jpg) no-repeat center top;
-	margin-top: -60px;
+	margin-top: -80px;
+    margin-bottom: -80px;
 	padding-top:0px;
 	text-align:center;
 	background-attachment: relative;

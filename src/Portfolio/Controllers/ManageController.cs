@@ -11,6 +11,7 @@ using Portfolio.Models;
 namespace Portfolio.Controllers
 {
     [Authorize]
+    [RequireHttps]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;

@@ -481,3 +481,20 @@ csmall2 {
 -moz-border-radius: 20px;
 border-radius: 20px; */
 }
+
+#comment {
+    width: 100%;
+    min-height: 100px;
+}
+
+.commentContainer {
+    color: #31a1db;
+    background-color: #384452;
+    border-style: ridge;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+#editComment {
+    width: 75%;
+}

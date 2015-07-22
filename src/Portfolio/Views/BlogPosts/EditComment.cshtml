@@ -1,0 +1,31 @@
+﻿@model Portfolio.Models.Comment
+@{
+    ViewBag.Title = "EditComment";
+}
+<!-- *****************************************************************************************************************
+     BLUE WRAP
+     ***************************************************************************************************************** -->
+<div id="blue">
+    <div class="container">
+        <div class="row">
+            <h3>Edit Comment.</h3>
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+<div class="spacing"></div>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h4>Edit your comment.</h4>
+        <div class="hline"></div>
+        <form action="@Url.Action("EditComment")" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="Slug" value="@Model.Post.Slug" />
+            <textarea name="Body" placeholder="Your Comment Here..." id="comment">@Model.Body</textarea>
+            <input type="hidden" name="PostID" value="@Model.PostID" />
+            <br />
+            <input type="submit" value="Save" class="btn btn-theme" />
+            <a href=""
+        </form>
+        <div class="hline"></div>
+    </div>
+</div>

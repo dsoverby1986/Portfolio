@@ -1,74 +1,9 @@
-﻿@model Portfolio.Models.Blog
+﻿@using Microsoft.AspNet.Identity
+@model Portfolio.Models.Blog
 
 @{
     ViewBag.Title = "Details";
 }
-@*
-    <h2>Details</h2>
-
-    <div>
-        <h4>Blog</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Created)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Created)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Updated)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Updated)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Title)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Slug)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Slug)
-            </dd>
-
-
-
-            <dt>
-                @Html.DisplayNameFor(model => model.MediaURL)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.MediaURL)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Published)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Published)
-            </dd>
-
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-*@
-
-
 <!-- *****************************************************************************************************************
  BLUE WRAP
  ***************************************************************************************************************** -->
@@ -92,7 +27,7 @@
             <h3 class="ctitle">@Html.DisplayFor(model => model.Title)</h3>
             <p><csmall>Posted: @Html.DisplayFor(model => model.Created)</csmall> | <csmall2>By: D.S. Overby</csmall2></p>
         <p>@Html.Raw(Model.Body)</p>
-        <p>@Html.DisplayFor(model => model.MediaURL)</p>
+        <!--<p>@Html.DisplayFor(model => model.MediaURL)</p>-->
             <div class="spacing"></div>
             <h6>SHARE:</h6>
             <p class="share">
@@ -101,6 +36,61 @@
                 <a href="#"><i class="fa fa-tumblr"></i></a>
                 <a href="#"><i class="fa fa-google-plus"></i></a>
             </p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            //using (Html.BeginForm())
+            //{
+                <div>
+                    <h4>Leave a comment.</h4>
+                    <div class="hline"></div>
+                    <form action="@Url.Action("CreateComment")" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="Slug" value="@Model.Slug" />
+                        <textarea name="Body" placeholder="Your Comment Here..." id="comment"></textarea>
+                        <input type="hidden" name="PostID" value="@Model.Id" />
+                        <br />
+                        <input type="submit" value="Submit" class="btn btn-theme" />
+                    </form>
+                    <br />
+                    <h4>Comments.</h4>
+                    <div class="hline"></div>
+                    <br />
+                </div>
+            //}
+
+            foreach (var item in Model.Comments)
+            {
+                <div class="commentContainer">
+                    <p>
+                        @if (item.Author.DisplayName == null)
+                        {
+                            <csmall>By: Anonymous</csmall><span>|</span>
+                        }
+                        else
+                        {
+                            <csmall>By: @Html.DisplayFor(modelItem => item.Author.DisplayName)</csmall><span>|</span>
+                        }
+                        <csmall>Date: @Html.DisplayFor(modelItem => item.Created)</csmall>
+                        @if (item.Updated != null)
+                        {
+                            <span>|</span><csmall>Updated: @Html.DisplayFor(modelItem => item.Updated)</csmall>
+                        }
+                    </p>
+                    <div>
+                        @Html.DisplayFor(modelItem => item.Body)
+                    </div>
+                </div>
+                if (item.AuthorId == User.Identity.GetUserId() || User.IsInRole("Admin") || User.IsInRole("Moderator"))
+                {
+                    <div>
+                        @Html.ActionLink("Edit", "EditComment", new { id = item.Id }) <span>|</span>
+                        @Html.ActionLink("Delete", "DeleteComment", new { id = item.Id })
+                    </div>
+                }
+            <br />
+                <!--<div class="hline"></div>-->
+            }
+        }
 
         </div><! --/col-lg-8 -->
 
@@ -173,3 +163,13 @@
         </div>
     </div><! --/row -->
 </div><! --/container -->
+@*
+    @section scripts {
+        <script src="~/Scripts/tinymce/tinymce.min.js"></script>
+        <script src="~/Scripts/tinymce/jquery.tinymce.min.js"></script>
+        <script>
+            $(function () {
+                $('textarea').tinymce({});
+            });
+        </script>
+    }*@

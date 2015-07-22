@@ -10,7 +10,7 @@ function fizzBuzz(i) {
     var element = $('<span></span>');
     var line = document.createElement('br');
 
-    if (i % 3 === 0 && i % 5 === 0) {
+    if (i % 15 === 0) {
         element.text('FizzBuzz');
     }
     else if (i % 3 === 0) {

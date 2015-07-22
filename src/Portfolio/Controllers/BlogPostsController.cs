@@ -8,10 +8,13 @@ using System.Web;
 using System.Web.Mvc;
 using Portfolio.Models;
 using BlogPosts.Models;
+using PagedList;
+using PagedList.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace Portfolio.Controllers
 {
-    [Authorize]
+    /*[Authorize]*/
     [RequireHttps]
     public class BlogPostsController : Controller
     {
@@ -23,7 +26,7 @@ namespace Portfolio.Controllers
             return View(db.Posts.OrderByDescending(p => p.Created));
         }
 
-        // GET: Blogs/Details/5
+    /*    // GET: Blogs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +39,20 @@ namespace Portfolio.Controllers
                 return HttpNotFound();
             }
             return View(blogs);
+        }*/
+
+        public ActionResult Details(string slug)
+        {
+            if (String.IsNullOrWhiteSpace(slug))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var post = db.Posts.Include(p => p.Comments).FirstOrDefault(p => p.Slug == slug);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+            return View(post);
         }
 
         // GET: Blogs/Create
@@ -53,17 +70,17 @@ namespace Portfolio.Controllers
         {
             if (ModelState.IsValid)
             {
-                var slug = StringUtilities.UrlFriendly(blog.Title);//variable 'slug' takes the string provided from the user from the 'title' field on the form
+                var slug = StringUtilities.UrlFriendly(blog.Title);
 
-                if (String.IsNullOrWhiteSpace(slug))//'if' 'slug' has any whitespace or if the user didn't provide a string in the 'title' field on the form
+                if (String.IsNullOrWhiteSpace(slug))
                 {
                     ModelState.AddModelError("Title", "Invalid title.");
-                    return View(blog);//return the view with the message 'Invalid title' in the 'Title' field.
+                    return View(blog);
                 }
-                if (db.Posts.Any(p => p.Slug == slug))//'if' the 'Posts' database collection has a 'Slug' value that is the same as the 'slug' variable here that was provided by the user from the 'title' field of the form
+                if (db.Posts.Any(p => p.Slug == slug))
                 {
                     ModelState.AddModelError("Title", "The title must be unique.");
-                    return View(blog);//return to the view with the message 'The title must be unique'.
+                    return View(blog);
                 }
                 else
                 {
@@ -98,16 +115,13 @@ namespace Portfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Body,MediaURL,Published")] Blog blog)
+        public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published")] Blog blog)
         {
             if (ModelState.IsValid)
             {
-                db.Posts.Attach(blog);
                 blog.Updated = DateTimeOffset.Now;
-              /*  db.Entry(blog).Property("Body");
-                db.Entry(blog).Property("MediaURL");
-                db.Entry(blog).Property("Published");*/
-                db.Entry(blog).State = EntityState.Modified;
+
+                db.Update<Blog>(blog, "Body", "MediaURL", "Published", "Updated");
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -148,5 +162,53 @@ namespace Portfolio.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateComment([Bind(Include = "PostID,Body,Created,AuthorId")]Comment comment, string Slug)
+        {
+            if (ModelState.IsValid)
+            {
+                comment.AuthorId = User.Identity.GetUserId();
+                comment.Created = DateTimeOffset.Now;
+                db.Comments.Add(comment);
+                db.SaveChanges();
+                return RedirectToAction("Details", new {Slug});
+            }
+            return View(comment);
+        }
+
+        //GET Comments/Edit
+        public ActionResult EditComment(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Comment comment = db.Comments.Find(id);
+            if (comment == null)
+            {
+                return HttpNotFound();
+            }
+            return View(comment);
+        }
+
+        // POST: Blogs/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditComment([Bind(Include = "Id,Body,Created,AuthorId")] Comment comment,string Slug)
+        {
+            if (ModelState.IsValid)
+            {
+                comment.Updated = DateTimeOffset.Now;
+                db.Update<Comment>(comment, "Body", "Updated");
+                db.SaveChanges();
+                return RedirectToAction("Details", new { Slug }); ;
+            }
+            return View(comment);
+        }
+
     }
 }

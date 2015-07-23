@@ -1,0 +1,47 @@
+﻿@model Portfolio.Models.Comment
+@{
+    ViewBag.Title = "DeleteComment";
+}
+<!-- *****************************************************************************************************************
+     BLUE WRAP
+     ***************************************************************************************************************** -->
+<div id="blue">
+    <div class="container">
+        <div class="row">
+            <h3>Edit Comment.</h3>
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+<div class="spacing"></div>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class="commentContainer">
+            <form action="@Url.Action("DeleteComment")" method="post">
+                @Html.AntiForgeryToken()
+                <p>
+                    <input type="hidden" name="Slug" value="@Model.Post.Slug" />
+                    <input type="hidden" name="PostID" value="@Model.PostID" />
+                    @if (Model.Author.DisplayName == null)
+                    {
+                        <csmall>By: Anonymous</csmall><span>|</span>
+                    }
+                    else
+                    {
+                        <csmall>By: @Model.Author.DisplayName)</csmall><span>|</span>
+                    }
+                    <csmall>Date: @Model.Created)</csmall>
+                    @if (Model.Updated != null)
+                    {
+                        <span>|</span><csmall>Updated: @Model.Updated</csmall>
+                    }
+                </p>
+
+                <div>
+                    @Model.Body
+                </div>
+                <input type="submit" value="Delete" class="btn btn-theme" />
+            </form>
+        </div>
+
+    </div>
+</div>

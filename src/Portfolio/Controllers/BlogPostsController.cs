@@ -205,10 +205,33 @@ namespace Portfolio.Controllers
                 comment.Updated = DateTimeOffset.Now;
                 db.Update<Comment>(comment, "Body", "Updated");
                 db.SaveChanges();
-                return RedirectToAction("Details", new { Slug }); ;
+                return RedirectToAction("Details", new { Slug });
             }
             return View(comment);
         }
 
+        public ActionResult DeleteComment(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Comment comment = db.Comments.Find(id);
+            if (comment == null)
+            {
+                return HttpNotFound();
+            }
+            return View(comment);
+        }
+
+        [HttpPost, ActionName("DeleteComment")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteCommentConfirmed(int id, string Slug)
+        {
+            Comment comment = db.Comments.Find(id);
+            db.Comments.Remove(comment);
+            db.SaveChanges();
+            return RedirectToAction("Details", new { Slug });
+        }
     }
 }

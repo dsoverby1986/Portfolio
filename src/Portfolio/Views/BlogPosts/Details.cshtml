@@ -23,11 +23,19 @@
         <! -- SINGLE POST -->
         <div class="col-lg-8">
             <! -- Blog Post 1 -->
-            <p><img class="img-responsive" src="~/img/post01.jpg"></p>
+            <div>
+                <h4>
+                    @Html.ActionLink("Back to List", "Index")
+                </h4>
+            </div>
+        @if (Model.MediaURL != null)
+        {
+            <p><img class="img-responsive dMediaUrl" src="@Model.MediaURL" alt=""></p>
+            <hr />
+        }
             <h3 class="ctitle">@Html.DisplayFor(model => model.Title)</h3>
             <p><csmall>Posted: @Html.DisplayFor(model => model.Created)</csmall> | <csmall2>By: D.S. Overby</csmall2></p>
         <p>@Html.Raw(Model.Body)</p>
-        <!--<p>@Html.DisplayFor(model => model.MediaURL)</p>-->
             <div class="spacing"></div>
             <h6>SHARE:</h6>
             <p class="share">

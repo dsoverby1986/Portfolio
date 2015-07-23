@@ -15,6 +15,8 @@
 <div class="spacing"></div>
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
+        <center><h3>Are you sure you want to delete this comment?</h3></center>
+        <br />
         <div class="commentContainer">
             <form action="@Url.Action("DeleteComment")" method="post">
                 @Html.AntiForgeryToken()
@@ -27,9 +29,9 @@
                     }
                     else
                     {
-                        <csmall>By: @Model.Author.DisplayName)</csmall><span>|</span>
+                        <csmall>By: @Model.Author.DisplayName</csmall><span>|</span>
                     }
-                    <csmall>Date: @Model.Created)</csmall>
+                    <csmall>Date: @Model.Created</csmall>
                     @if (Model.Updated != null)
                     {
                         <span>|</span><csmall>Updated: @Model.Updated</csmall>
@@ -39,6 +41,7 @@
                 <div>
                     @Model.Body
                 </div>
+                <br />
                 <input type="submit" value="Delete" class="btn btn-theme" />
             </form>
         </div>

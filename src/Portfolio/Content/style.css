@@ -335,6 +335,8 @@ a:focus {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	background: #384452;
+    height: 294px;
+    bottom: 0;
 }
 
 #footerwrap p {
@@ -497,4 +499,44 @@ border-radius: 20px; */
 
 #editComment {
     width: 75%;
+}
+/*
+.jsExercises {
+    width: 100%;
+    height: 215px;
+    color: white;
+    font-size: 35px;
+}
+
+    .jseText {
+        padding-top: 30%;
+    }
+
+        #maxOfFive {
+            background-color: #c86608;
+        }
+
+            #sumMultiply {
+                background-color: #225a90;
+            }
+
+                #factorial {
+                    background-color: #6cd113;
+                }
+
+                    #palindrome {
+                        background-color: #b77d4c;
+                    }*/
+.iMediaUrl {
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+}
+
+.dMediaUrl {
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
 }

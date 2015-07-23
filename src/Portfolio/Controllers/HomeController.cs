@@ -88,5 +88,10 @@ namespace Portfolio.Controllers
 
             return View();
         }
+
+        public ActionResult Clean()
+        {
+            return View();
+        }
     }
 }

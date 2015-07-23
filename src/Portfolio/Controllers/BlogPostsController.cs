@@ -11,6 +11,7 @@ using BlogPosts.Models;
 using PagedList;
 using PagedList.Mvc;
 using Microsoft.AspNet.Identity;
+using System.IO;
 
 namespace Portfolio.Controllers
 {
@@ -21,27 +22,14 @@ namespace Portfolio.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Blogs
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
+            int pageSize = 3;
 
-            return View(db.Posts.OrderByDescending(p => p.Created));
+            int pageNumber = (page ?? 1);
 
+            return View(db.Posts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
         }
-
-    /*    // GET: Blogs/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Blog blogs = db.Posts.Find(id);
-            if (blogs == null)
-            {
-                return HttpNotFound();
-            }
-            return View(blogs);
-        }*/
 
         public ActionResult Details(string slug)
         {
@@ -68,10 +56,32 @@ namespace Portfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published")] Blog blog)
+        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published")] Blog blog, HttpPostedFileBase image)
         {
+
+            if (image != null && image.ContentLength > 0)
+            {
+                var ext = Path.GetExtension(image.FileName).ToLower();
+
+                if (ext != ".png" && ext != ".jpg" && ext != ".gif" && ext != ".bmp")
+                {
+                    ModelState.AddModelError("image", "Invalid Format.");
+                }
+            }
+
             if (ModelState.IsValid)
             {
+                if (image != null)
+                {
+                    var filePath = "/img/";
+
+                    var absPath = Server.MapPath("~" + filePath);
+
+                    blog.MediaURL = filePath + image.FileName;
+
+                    image.SaveAs(Path.Combine(absPath, image.FileName));
+                }
+
                 var slug = StringUtilities.UrlFriendly(blog.Title);
 
                 if (String.IsNullOrWhiteSpace(slug))

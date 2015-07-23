@@ -662,6 +662,7 @@
     <Content Include="Views\Account\ConfirmationSent.cshtml" />
     <Content Include="Views\BlogPosts\EditComment.cshtml" />
     <Content Include="Views\BlogPosts\DeleteComment.cshtml" />
+    <Content Include="Views\Home\Clean.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -23,7 +23,9 @@ namespace Portfolio.Controllers
         // GET: Blogs
         public ActionResult Index()
         {
+
             return View(db.Posts.OrderByDescending(p => p.Created));
+
         }
 
     /*    // GET: Blogs/Details/5

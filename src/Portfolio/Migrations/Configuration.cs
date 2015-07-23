@@ -38,13 +38,35 @@ namespace Portfolio.Migrations
                         Email = "dsoverby1986@gmail.com",
                         FirstName = "Shane",
                         LastName = "Overby",
-                        DisplayName = "shaneOverby"
+                        DisplayName = "admin"
                     }, "Password1!");
             }
 
             var userId = userManager.FindByEmail("dsoverby1986@gmail.com").Id;
             userManager.AddToRole(userId, "Admin");
 
+            if (!context.Roles.Any(r => r.Name == "Moderator"))
+            {
+                roleManager.Create(new IdentityRole { Name = "Moderator" });
+            }
+
+            var userModerator = new UserManager<ApplicationUser>(
+                new UserStore<ApplicationUser>(context));
+
+            if (!context.Users.Any(u => u.Email == "danny.Tanner@gmx.com"))
+            {
+                userModerator.Create(new ApplicationUser
+                    {
+                        UserName = "danny.Tanner@gmx.com",
+                        Email = "danny.Tanner@gmx.com",
+                        FirstName = "Danny",
+                        LastName = "Tanner",
+                        DisplayName = "moderator"
+                    }, "Password2!");
+            }
+
+            var userId2 = userModerator.FindByEmail("danny.Tanner@gmx.com").Id;
+            userModerator.AddToRole(userId2, "Moderator");
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

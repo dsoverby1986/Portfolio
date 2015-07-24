@@ -22,13 +22,25 @@ namespace Portfolio.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Blogs
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page, string searchTerm)
         {
+
+            var blogList = from str in db.Posts
+                           select str;
+
+            if (searchTerm != null)
+            {
+                if (!String.IsNullOrWhiteSpace(searchTerm))
+                {
+                    blogList = blogList.Where(s => s.Title.Contains(searchTerm) || s.Body.Contains(searchTerm) || s.Comments.Any(c => c.Body.Contains(searchTerm)));
+                }
+            }
+
             int pageSize = 3;
 
             int pageNumber = (page ?? 1);
 
-            return View(db.Posts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
+            return View(blogList.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult Details(string slug)
@@ -41,6 +53,10 @@ namespace Portfolio.Controllers
             if (post == null)
             {
                 return HttpNotFound();
+            }
+            if(User.IsInRole("Moderator"))
+            {
+                var a = "hi";
             }
             return View(post);
         }

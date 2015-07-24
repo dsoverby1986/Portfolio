@@ -53,19 +53,19 @@ namespace Portfolio.Migrations
             var userModerator = new UserManager<ApplicationUser>(
                 new UserStore<ApplicationUser>(context));
 
-            if (!context.Users.Any(u => u.Email == "danny.Tanner@gmx.com"))
+            if (!context.Users.Any(u => u.Email == "moderator@coderfoundry.com"))
             {
                 userModerator.Create(new ApplicationUser
                     {
-                        UserName = "danny.Tanner@gmx.com",
-                        Email = "danny.Tanner@gmx.com",
-                        FirstName = "Danny",
-                        LastName = "Tanner",
+                        UserName = "moderator@coderfoundry.com",
+                        Email = "moderator@coderfoundry.com",
+                        FirstName = "Coder",
+                        LastName = "Foundry",
                         DisplayName = "moderator"
                     }, "Password2!");
             }
 
-            var userId2 = userModerator.FindByEmail("danny.Tanner@gmx.com").Id;
+            var userId2 = userModerator.FindByEmail("moderator@coderfoundry.com").Id;
             userModerator.AddToRole(userId2, "Moderator");
             //  This method will be called after migrating to the latest version.
 

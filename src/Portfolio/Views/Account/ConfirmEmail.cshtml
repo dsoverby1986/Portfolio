@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Confirm Email";
+    ViewBag.Title = "Confirm Email.";
 }
 <!-- *****************************************************************************************************************
      BLUE WRAP
@@ -7,17 +7,19 @@
 <div id="blue">
     <div class="container">
         <div class="row">
-            <h3>Login.</h3>
+            <h3>@ViewBag.Title</h3>
         </div><!-- /row -->
     </div> <!-- /container -->
 </div><!-- /blue -->
 <div class="spacing"></div>
-<br />
-<center>
-    <h3>
-        Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-    </h3>
-</center>
-<br />
-<br />
-<br />
+<div>
+    <br />
+    <center>
+        <h4>
+            Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </h4>
+    </center>
+    <br />
+    <br />
+    <br />
+</div>

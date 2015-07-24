@@ -8,10 +8,11 @@
 <div id="blue">
     <div class="container">
         <div class="row">
-            <h3>Resend Email Confirmation.</h3>
+            <h3>@ViewBag.Title</h3>
         </div><!-- /row -->
     </div> <!-- /container -->
 </div><!-- /blue -->
+<div class="spacing"></div>
 @using (Html.BeginForm("ResendEmailConfirmation", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()

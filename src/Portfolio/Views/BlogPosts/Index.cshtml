@@ -128,11 +128,15 @@
         <div class="col-lg-4">
             <h4>Search</h4>
             <div class="hline"></div>
-            <p>
-                <br />
-                <input type="text" class="form-control" placeholder="Search something" formmethod="post">
-            </p>
-
+            <form action="@Url.Action("Index")" method="post">
+                <p>
+                    <br />
+                    <input type="text" class="form-control" placeholder="What are you looking for?" name="searchTerm">
+                </p>
+                <div><!--class="form-group"-->
+                    <input type="submit" class="btn btn-theme" value="Search Posts." />
+                </div>
+            </form>
             <div class="spacing"></div>
 
             <h4>Categories</h4>
@@ -201,7 +205,6 @@
             ellipsis: "...",
             height: 200
         });
-        $(element).attr("id", "theid");
     });
 </script>
 }

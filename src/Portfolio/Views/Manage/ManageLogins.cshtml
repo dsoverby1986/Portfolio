@@ -1,15 +1,19 @@
 ﻿@model Portfolio.Models.ManageLoginsViewModel
 @using Microsoft.Owin.Security
 @{
-    ViewBag.Title = "Manage your external logins";
+    ViewBag.Title = "Manage your external logins.";
 }
-<br />
-<br />
-<br />
-<br />
-<br />
-<h2>@ViewBag.Title.</h2>
-
+<!-- *****************************************************************************************************************
+    BLUE WRAP
+    ***************************************************************************************************************** -->
+<div id="blue">
+    <div class="container">
+        <div class="row">
+            <h3>@ViewBag.Title</h3>
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+<div class="spacing"></div>
 <p class="text-success">@ViewBag.StatusMessage</p>
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();

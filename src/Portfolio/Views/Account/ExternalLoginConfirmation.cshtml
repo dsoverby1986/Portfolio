@@ -1,9 +1,18 @@
 ﻿@model Portfolio.Models.ExternalLoginConfirmationViewModel
 @{
-    ViewBag.Title = "Register";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>Associate your @ViewBag.LoginProvider account.</h3>
+    ViewBag.Title = "Register.";
+}<!-- *****************************************************************************************************************
+    BLUE WRAP
+    ***************************************************************************************************************** -->
+<div id="blue">
+    <div class="container">
+        <div class="row">
+            <h3>@ViewBag.Title</h3>
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+<div class="spacing"></div>
+<center><h3>Associate your @ViewBag.LoginProvider account.</h3></center>
 
 @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {

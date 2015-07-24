@@ -34,13 +34,18 @@
             <hr />
         }
             <h3 class="ctitle">@Html.DisplayFor(model => model.Title)</h3>
-            <p><csmall>Posted: @Html.DisplayFor(model => model.Created)</csmall> | <csmall2>By: D.S. Overby</csmall2></p>
+            <p><csmall>Posted: @Html.DisplayFor(model => model.Created)</csmall> |
+            @if (Model.Updated != null)
+            {
+                <csmall>Updated: @Html.DisplayFor(model => model.Updated)</csmall> <span>|</span>
+            } 
+            <csmall2>By: D.S. Overby</csmall2></p>
         <p>@Html.Raw(Model.Body)</p>
             <div class="spacing"></div>
             <h6>SHARE:</h6>
             <p class="share">
                 <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-tumblr"></i></a>
                 <a href="#"><i class="fa fa-google-plus"></i></a>
             </p>

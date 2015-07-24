@@ -99,8 +99,11 @@
                         }
                         <h3 class="ctitle">@Html.DisplayFor(modelItem => item.Title)</h3>
                         <p>
-                            <csmall>Posted: @Html.DisplayFor(modelItem => item.Created)</csmall> |
-                            <csmall> Updated: @Html.DisplayFor(modelItem => item.Updated)</csmall> |
+                            <csmall>Posted: @Html.DisplayFor(modelItem => item.Created)</csmall> <span>|</span>
+                            @if (item.Updated != null)
+                            {
+                                <csmall>Updated: @Html.DisplayFor(modelItem => item.Updated)</csmall> <span>|</span>
+                            }
                             <csmall2>By: D.S. Overby</csmall2>
                         </p>
                         <div class="truncate-me">
@@ -127,7 +130,7 @@
             <div class="hline"></div>
             <p>
                 <br />
-                <input type="text" class="form-control" placeholder="Search something">
+                <input type="text" class="form-control" placeholder="Search something" formmethod="post">
             </p>
 
             <div class="spacing"></div>

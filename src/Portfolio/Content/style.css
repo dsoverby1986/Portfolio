@@ -540,3 +540,11 @@ border-radius: 20px; */
     height: auto;
     width: auto\9;
 }
+
+.categories {
+    font-size: smaller;
+}
+
+.otherColumn {
+    padding-left: 10px;
+}

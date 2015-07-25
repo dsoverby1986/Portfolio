@@ -112,12 +112,13 @@
         <div class="col-lg-4">
             <h4>Search</h4>
             <div class="hline"></div>
-            <form>
+            <form action="@Url.Action("Index")" method="post">
                 <p>
                     <br />
-                    <input type="text" class="form-control" placeholder="What are you looking for?" formmethod="post" name="searchTerm">
+                    <input type="text" class="form-control" placeholder="What are you looking for?" name="searchTerm">
                 </p>
-                <div class="form-group">
+                <div>
+                    <!--class="form-group"-->
                     <input type="submit" class="btn btn-theme" value="Search Posts." />
                 </div>
             </form>

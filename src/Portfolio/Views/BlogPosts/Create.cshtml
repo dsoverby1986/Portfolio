@@ -48,6 +48,109 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2"})
+            <div class="col-md-10">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="firstColumn" align="right">
+                                <label for="business" class="categories" id="cat1">Business</label>
+                                <input type="checkbox" name="business" />
+                                <br />
+                                <label for="personal" class="categories" id="cat2">Personal</label>
+                                <input type="checkbox" name="personal" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="technology" class="categories" id="cat3">Technology</label>
+                                <input type="checkbox" name="technology" />
+                                <br />
+                                <label for="education" class="categories" id="cat4">Education</label>
+                                <input type="checkbox" name="education" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="health" class="categories" id="cat5">Health</label>
+                                <input type="checkbox" name="health" />
+                                <br />
+                                <label for="music" class="categories" id="cat6">Music</label>
+                                <input type="checkbox" name="music" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="political" class="categories" id="cat7">Political</label>
+                                <input type="checkbox" name="political" />
+                                <br />
+                                <label for="travel" class="categories" id="cat8">Travel</label>
+                                <input type="checkbox" name="travel" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="food" class="categories" id="cat9">Food</label>
+                                <input type="checkbox" name="food" />
+                                <br />
+                                <label for="diy" class="categories" id="cat10">DIY</label>
+                                <input type="checkbox" name="diy" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="entertainment" class="categories" id="cat11">Entertainment</label>
+                                <input type="checkbox" name="entertainment" />
+                                <br />
+                                <label for="social" class="categories" id="cat12">Social Media</label>
+                                <input type="checkbox" name="social" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="history" class="categories" id="cat13">History</label>
+                                <input type="checkbox" name="history" />
+                                <br />
+                                <label for="movies" class="categories" id="cat14">Movies</label>
+                                <input type="checkbox" name="movies" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="books" class="categories" id="cat15">Boooks</label>
+                                <input type="checkbox" name="books" />
+                                <br />
+                                <label for="medical" class="categories" id="cat16">Medical</label>
+                                <input type="checkbox" name="medical" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="nature" class="categories" id="cat17">Nature</label>
+                                <input type="checkbox" name="nature" />
+                                <br />
+                                <label for="career" class="categories" id="cat18">Career</label>
+                                <input type="checkbox" name="career" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="automotive" class="categories" id="cat19">Automotive</label>
+                                <input type="checkbox" name="automotive" />
+                                <br />
+                                <label for="parenting" class="categories" id="cat20">Parenting</label>
+                                <input type="checkbox" name="parenting" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="gaming" class="categories" id="cat21">Gaming</label>
+                                <input type="checkbox" name="gaming" />
+                                <br />
+                                <label for="lifestyle" class="categories" id="cat22">Lifestyle</label>
+                                <input type="checkbox" name="lifestyle" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="science" class="categories" id="cat23">Science</label>
+                                <input type="checkbox" name="science" />
+                                <br />
+                                <label for="sports" class="categories" id="cat24">Sports</label>
+                                <input type="checkbox" name="sports" />
+                            </td>
+                            <td class="otherColumn" align="right">
+                                <label for="consumerism" class="categories" id="cat25">Consumerism</label>
+                                <input type="checkbox" name="consumerism" />
+                                <br />
+                                <label for="environmental" class="categories" id="cat24">Environmental</label>
+                                <input type="checkbox" name="environmental" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Published, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
@@ -66,7 +169,7 @@
     <!--}-->
 </form>
 
-<div id="backToList" style="margin-left: 25px;">
+<div id="backToList" style="margin-left: 17.2%;">
     @Html.ActionLink("Back to List", "Index")
 </div>
 

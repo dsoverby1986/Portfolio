@@ -32,7 +32,10 @@ namespace Portfolio.Controllers
             {
                 if (!String.IsNullOrWhiteSpace(searchTerm))
                 {
-                    blogList = blogList.Where(s => s.Title.Contains(searchTerm) || s.Body.Contains(searchTerm) || s.Comments.Any(c => c.Body.Contains(searchTerm)));
+                    blogList = blogList.Where(s => s.Title.Contains(searchTerm) || 
+                        s.Body.Contains(searchTerm) ||
+                        s.Comments.Any(c => c.Body.Contains(searchTerm)) || 
+                        s.Category.Contains(searchTerm));
                 }
             }
 
@@ -72,7 +75,7 @@ namespace Portfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published")] Blog blog, HttpPostedFileBase image)
+        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Category,Published")] Blog blog, HttpPostedFileBase image)
         {
 
             if (image != null && image.ContentLength > 0)
@@ -143,13 +146,13 @@ namespace Portfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published")] Blog blog)
+        public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Category,Published")] Blog blog)
         {
             if (ModelState.IsValid)
             {
                 blog.Updated = DateTimeOffset.Now;
 
-                db.Update<Blog>(blog, "Body", "MediaURL", "Published", "Updated");
+                db.Update<Blog>(blog, "Body", "MediaURL", "Category", "Published", "Updated");
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

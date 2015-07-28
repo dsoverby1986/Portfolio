@@ -39,7 +39,12 @@
             {
                 <csmall>Updated: @Html.DisplayFor(model => model.Updated)</csmall> <span>|</span>
             } 
-            <csmall2>By: D.S. Overby</csmall2></p>
+            <csmall2>By: D.S. Overby</csmall2>
+                @if (Model.Category != null)
+                {
+                    <span>|</span> <csmall>Category: @Html.DisplayFor(model => model.Category)</csmall>
+                }
+            </p>
         <p>@Html.Raw(Model.Body)</p>
             <div class="spacing"></div>
             <h6>SHARE:</h6>

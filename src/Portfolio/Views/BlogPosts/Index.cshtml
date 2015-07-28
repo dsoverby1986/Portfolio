@@ -105,12 +105,17 @@
                                 <csmall>Updated: @Html.DisplayFor(modelItem => item.Updated)</csmall> <span>|</span>
                             }
                             <csmall2>By: D.S. Overby</csmall2>
+                            @if (item.Category != null)
+                            {
+                                <span>|</span> <csmall>Category: @Html.DisplayFor(modelItem => item.Category)</csmall>
+                            }
                         </p>
                         <div class="truncate-me">
                             <p>@Html.Raw(item.Body)</p>
                         </div>
                         <p>@Html.ActionLink("[Read More]", "Details", new { item.Slug })</p>
                         if (User.IsInRole("Admin"))
+                            
                         {
                             <div id="blogControls">
                                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <span>|</span>
@@ -131,10 +136,10 @@
             <form action="@Url.Action("Index")" method="post">
                 <p>
                     <br />
-                    <input type="text" class="form-control" placeholder="What are you looking for?" name="searchTerm">
+                    <input type="text" class="form-control" placeholder="What are you looking for?" name="searchTerm" id="searchTerm">
                 </p>
                 <div><!--class="form-group"-->
-                    <input type="submit" class="btn btn-theme" value="Search Posts." />
+                    <input type="submit" class="btn btn-theme" value="Search Posts/Reset List" id="search" />
                 </div>
             </form>
 
@@ -201,12 +206,31 @@
 
 
 @section scripts {
-<script>
-    $(function () {
-        $('.truncate-me').dotdotdot({
-            ellipsis: "...",
-            height: 200
+    <script>
+        $(function () {
+            $('.truncate-me').dotdotdot({
+                ellipsis: "...",
+                height: 200
+            });
         });
-    });
-</script>
+    </script>
+
+    <!--Want to populate the search input field with the term that has just been searched for
+        so that the user can easily look at the input field and see what they just searched for
+        inscase they had forgetten.  I have not yet figured out how to get at the input element -->
+    <script>
+        $(function () {
+            $('#search').click(function () {
+                var term = $('#searchTerm').val();
+                var reset = $('#searchTerm');
+                $('#search').click(function () {
+                    term.text(term);
+                });
+                $('#searchTerm').mousedown(function () {
+
+                });
+            });
+        });
+    </script>
+
 }

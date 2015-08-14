@@ -355,6 +355,7 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="App_Code\Helpers.cshtml" />
     <None Include="Properties\PublishProfiles\DSOverby.pubxml" />
+    <Content Include="img\trip.jpg" />
     <Content Include="Resume\Overby_Resume_No_Ref.pdf" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

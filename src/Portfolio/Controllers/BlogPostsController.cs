@@ -126,6 +126,8 @@ namespace Portfolio.Controllers
             return View(blog);
         }
 
+     
+
         // GET: Blogs/Edit/5
         public ActionResult Edit(int? id)
         {

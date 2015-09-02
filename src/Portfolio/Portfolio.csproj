@@ -255,6 +255,8 @@
     <Content Include="Icon.png" />
     <Content Include="img\agency.jpg" />
     <Content Include="img\browser.png" />
+    <Content Include="img\portfolio\BugTrackerLogo.png" />
+    <Content Include="img\portfolio\car_icon_orange.png" />
     <Content Include="img\clients\client01.png" />
     <Content Include="img\clients\client02.png" />
     <Content Include="img\clients\client03.png" />
@@ -294,6 +296,7 @@
     <Content Include="img\css\prettyPhoto\light_square\sprite.png" />
     <Content Include="img\landingP.png" />
     <Content Include="img\portfolio\Armstrong.png" />
+    <Content Include="img\portfolio\car_icon_orange_resized.png" />
     <Content Include="img\portfolio\Factorial.png" />
     <Content Include="img\portfolio\FizzBuzz.png" />
     <Content Include="img\portfolio\Happy_Numbers.png" />

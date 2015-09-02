@@ -550,3 +550,7 @@ border-radius: 20px; */
 .otherColumn {
     padding-left: 10px;
 }
+
+.resumeLine {
+     opacity:.4;
+}

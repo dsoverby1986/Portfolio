@@ -253,8 +253,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Icon.png" />
+    <Content Include="img\1375773_666361213387525_1503362993_n.jpg" />
     <Content Include="img\agency.jpg" />
     <Content Include="img\browser.png" />
+    <Content Include="img\landingPS.jpg" />
+    <Content Include="img\portfolio\budgeting.jpg" />
     <Content Include="img\portfolio\BugTrackerLogo.png" />
     <Content Include="img\portfolio\car_icon_orange.png" />
     <Content Include="img\clients\client01.png" />

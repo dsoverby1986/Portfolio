@@ -481,6 +481,9 @@ csmall2 {
     border:0px solid #31a1db;
     -webkit-border-top-right-radius: 20px;
     -webkit-border-top-left-radius: 20px;
+    opacity: .8;
+    height: 18%;
+    width: 75%;
 /*-webkit-border-radius: 20px;
 -moz-border-radius: 20px;
 border-radius: 20px; */

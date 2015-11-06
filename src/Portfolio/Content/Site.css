@@ -76,3 +76,7 @@ div.area * {
 th {
     color: blue;
 }
+
+#budgetImg {
+    height:200px;
+}

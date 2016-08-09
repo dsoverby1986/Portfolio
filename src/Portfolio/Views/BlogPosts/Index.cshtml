@@ -128,27 +128,40 @@
     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 
 </div><! --/col-lg-8 -->
-
         <! -- SIDEBAR -->
         <div class="col-lg-4">
             <h4>Search</h4>
-            <!--<div class="hline"></div>-->
+            <div class="hline"></div>
             <form action="@Url.Action("Index")" method="post">
                 <p>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" placeholder="What are you looking for?" name="searchTerm" id="searchTerm" />
-                        </div>
-                        <div class="col-md-4">
-                            <input type="submit" class="btn btn-theme" value="Search/Reset" id="search" style="margin-top:0%; margin-left:0%"/>
-                        </div>
-                    </div>
+                    <br />
+                    <input type="text" class="form-control" placeholder="What are you looking for?" name="searchTerm">
                 </p>
-             @*   <div><!--class="form-group"-->
-    </div>   *@
+                <div>
+                    <!--class="form-group"-->
+                    <input type="submit" class="btn btn-theme" value="Search Posts/Reset" />
+                </div>
             </form>
+            @* <! -- SIDEBAR -->
+            <div class="col-lg-4">
+                <h4>Search</h4>
+                <!--<div class="hline"></div>-->
+                <form action="@Url.Action("Index")" method="post">
+                    <p>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" placeholder="What are you looking for?" name="searchTerm" id="searchTerm" />
+                            </div>
+                            <div class="col-md-4">
+                                <input type="submit" class="btn btn-theme" value="Search/Reset" id="search" style="margin-top:0%; margin-left:0%"/>
+                            </div>
+                        </div>
+                    </p>
+               <div><!--class="form-group"-->
+            </div>  
+            </form>*@
 
-
+            @*
             <div class="spacing"></div>
 
             <h4>Categories</h4>
@@ -204,7 +217,7 @@
                 <a class="btn btn-theme" href="#" role="button">Interface</a>
                 <a class="btn btn-theme" href="#" role="button">UI</a>
                 <a class="btn btn-theme" href="#" role="button">Blog</a>
-            </p>
+            </p>*@
         </div>
     </div><! --/row -->
 </div><! --/container -->

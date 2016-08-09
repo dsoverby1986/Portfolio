@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -300,6 +301,8 @@
     <Content Include="img\landingP.png" />
     <Content Include="img\portfolio\Armstrong.png" />
     <Content Include="img\portfolio\car_icon_orange_resized.png" />
+    <Content Include="img\portfolio\DavieCleaningService.png" />
+    <Content Include="img\portfolio\DavieCleaningService_8_120x200.png" />
     <Content Include="img\portfolio\Factorial.png" />
     <Content Include="img\portfolio\FizzBuzz.png" />
     <Content Include="img\portfolio\Happy_Numbers.png" />
@@ -363,6 +366,8 @@
     <None Include="Properties\PublishProfiles\DSOverby.pubxml" />
     <Content Include="img\trip.jpg" />
     <Content Include="Resume\Overby_Resume_No_Ref.pdf" />
+    <Content Include="Resume\shane_overby_resume.pdf" />
+    <None Include="Properties\PublishProfiles\shanerby.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -389,6 +394,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\navbarTic.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\Popover.js" />
     <Content Include="Scripts\Portfolio.js" />
